@@ -1,0 +1,5 @@
+This is tmy first text file
+using git 
+download nad install git 
+create a directory
+call git init and initai
