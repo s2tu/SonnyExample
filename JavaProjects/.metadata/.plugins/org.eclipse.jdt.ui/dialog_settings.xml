@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
+	<item value="3" key="TypeHierarchyViewPart.orientation"/>
+	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
+	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
+	<section name="SelfEncapsulateFieldWizard">
+		<item value="false" key="GenerateJavadoc"/>
+	</section>
+	<section name="GenerateConstructorUsingFieldsSelectionDialog">
+		<item value="false" key="OmitCallToSuper"/>
+	</section>
+	<section name="DialogBounds_SuperInterfaceSelectionDialog">
+		<item value="309" key="DIALOG_WIDTH"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		<item value="488" key="DIALOG_HEIGHT"/>
+		<item value="96" key="DIALOG_X_ORIGIN"/>
+		<item value="-26" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
+		<item value="2" key="layout"/>
+		<item value="true" key="group_libraries"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;packageExplorer group_libraries=&quot;1&quot; layout=&quot;2&quot; linkWithEditor=&quot;0&quot; rootMode=&quot;1&quot; workingSetName=&quot;Aggregate for window 1469516062879&quot;&gt;&#x0D;&#x0A;&lt;customFilters userDefinedPatternsEnabled=&quot;false&quot;&gt;&#x0D;&#x0A;&lt;xmlDefinedFilters&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.StaticsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_RemoteSystemsConnections&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.mylyn.java.ui.MembersFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.m2e.MavenModuleFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.pde.ui.BinaryProjectFilter1&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.pde.ui.ExternalPluginLibrariesFilter1&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.FieldsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_RemoteSystemsTempFiles&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;/xmlDefinedFilters&gt;&#x0D;&#x0A;&lt;/customFilters&gt;&#x0D;&#x0A;&lt;/packageExplorer&gt;" key="memento"/>
+		<item value="false" key="linkWithEditor"/>
+		<item value="1" key="rootMode"/>
+	</section>
+	<section name="DialogBounds_GenerateConstructorUsingFieldsSelectionDialog">
+		<item value="467" key="DIALOG_WIDTH"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		<item value="598" key="DIALOG_HEIGHT"/>
+		<item value="38" key="DIALOG_Y_ORIGIN"/>
+		<item value="127" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="NewClassWizardPage">
+		<item value="false" key="create_constructor"/>
+		<item value="true" key="create_unimplemented"/>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+	</section>
+	<section name="SourceActionDialog.constructors">
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
+		<item value="false" key="FinalModifier"/>
+	</section>
+	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
+		<item value="480" key="DIALOG_WIDTH"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		<item value="617" key="DIALOG_HEIGHT"/>
+		<item value="25" key="DIALOG_Y_ORIGIN"/>
+		<item value="120" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;" key="History"/>
+	</section>
+	<section name="RefactoringWizard.preview">
+		<item value="600" key="width"/>
+		<item value="400" key="height"/>
+	</section>
+	<section name="javadoc">
+		<item value="public" key="access"/>
+		<item value="false" key="noindex"/>
+		<item value="D:\JavaProjects\QuickStart\javadoc.xml" key="antpath"/>
+		<item value="false" key="nodeprecatedlist"/>
+		<item value="true" key="use"/>
+		<item value="true" key="author"/>
+		<item value="false" key="nodeprecated"/>
+		<item value="false" key="nonavbar"/>
+		<item value="" key="docletpath"/>
+		<item value="C:\Program Files\Java\jdk1.7.0_51\bin\javadoc.exe" key="javadoc_command_history"/>
+		<item value="1.7" key="source"/>
+		<item value="true" key="version"/>
+		<item value="" key="docletname"/>
+		<item value="true" key="splitindex"/>
+		<item value="true" key="fromStandard"/>
+		<item value="false" key="notree"/>
+		<item value="D:\JavaProjects\QuickStart\doc" key="destdir"/>
+		<item value="false" key="openinbrowser"/>
+		<section name="projects">
+			<section name="ServletExample">
+				<item value="D:\SapientTraining_Jan16\ServletExample\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\ServletExample\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="HTML_Examples">
+				<item value="D:\SapientTraining_Jan16\HTML_Examples\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\HTML_Examples\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="JSP_Example">
+				<item value="D:\SapientTraining_Jan16\JSP_Example\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\JSP_Example\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="JackRabbitOCM">
+				<item value="D:\SapientTraining_Jan16\JackRabbitOCM\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\JackRabbitOCM\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Servers">
+				<item value="D:\SapientTraining_Jan16\Servers\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\Servers\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="ConverterConsumer">
+				<item value="D:\SapientTraining_Jan16\ConverterConsumer\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\ConverterConsumer\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="NodeLoginApplication">
+				<item value="D:\SapientTraining_Jan16\NodeLoginApplication\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\NodeLoginApplication\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="ConverterService2">
+				<item value="D:\SapientTraining_Jan16\ConverterService2\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\ConverterService2\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="SQLExamples">
+				<item value="D:\SapientTraining_Jan16\SQLExamples\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\SQLExamples\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="CoreNode">
+				<item value="D:\SapientTraining_Jan16\CoreNode\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\CoreNode\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="MyFirstPython">
+				<item value="D:\SapientTraining_Jan16\MyFirstPython\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\MyFirstPython\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="REST_Examples">
+				<item value="D:\SapientTraining_Jan16\REST_Examples\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\REST_Examples\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="ExpressNode">
+				<item value="D:\SapientTraining_Jan16\ExpressNode\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\ExpressNode\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="KoaNode">
+				<item value="D:\SapientTraining_Jan16\KoaNode\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\KoaNode\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="ListenersAndFilters">
+				<item value="D:\SapientTraining_Jan16\ListenersAndFilters\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\ListenersAndFilters\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="MVC_With_Annotation">
+				<item value="D:\SapientTraining_Jan16\MVC_With_Annotation\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\MVC_With_Annotation\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="DesignPatterns">
+				<item value="D:\SapientTraining_Jan16\DesignPatterns\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\DesignPatterns\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="SpringFileUpload">
+				<item value="D:\SapientTraining_Jan16\SpringFileUpload\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\SpringFileUpload\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="RequestDispatcher">
+				<item value="D:\SapientTraining_Jan16\RequestDispatcher\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\RequestDispatcher\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="ServiceRequest">
+				<item value="D:\SapientTraining_Jan16\ServiceRequest\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\ServiceRequest\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="SpringCore_Examples">
+				<item value="D:\SapientTraining_Jan16\SpringCore_Examples\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\SpringCore_Examples\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="REST_Client">
+				<item value="D:\SapientTraining_Jan16\REST_Client\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\REST_Client\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="NTier_Application">
+				<item value="D:\SapientTraining_Jan16\NTier_Application\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\NTier_Application\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Nashorn">
+				<item value="D:\SapientTraining_Jan16\Nashorn\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\Nashorn\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Examples">
+				<item value="D:\SapientTraining_Jan16\Examples\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\Examples\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="CustomTags">
+				<item value="D:\SapientTraining_Jan16\CustomTags\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\CustomTags\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="JavaBean_Example">
+				<item value="D:\SapientTraining_Jan16\JavaBean_Example\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\JavaBean_Example\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="One2OneBiDir">
+				<item value="D:\SapientTraining_Jan16\One2OneBiDir\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\One2OneBiDir\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="SpringMVC">
+				<item value="D:\SapientTraining_Jan16\SpringMVC\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\SpringMVC\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Log4jExamples">
+				<item value="D:\SapientTraining_Jan16\Log4jExamples\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\Log4jExamples\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="UnitTesting">
+				<item value="D:\SapientTraining_Jan16\UnitTesting\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\UnitTesting\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="RemoteSystemsTempFiles">
+				<item value="D:\JavaProjects\RemoteSystemsTempFiles\javadoc.xml" key="antpath"/>
+				<item value="D:\JavaProjects\RemoteSystemsTempFiles\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="JCRExample">
+				<item value="D:\SapientTraining_Jan16\JCRExample\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\JCRExample\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="QuickStart">
+				<item value="D:\JavaProjects\QuickStart\javadoc.xml" key="antpath"/>
+				<item value="D:\JavaProjects\QuickStart\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Spring_Hibernate">
+				<item value="D:\SapientTraining_Jan16\Spring_Hibernate\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\Spring_Hibernate\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="SpringMVC_Form_Valid_Exception_Handling">
+				<item value="D:\SapientTraining_Jan16\SpringMVC_Form_Valid_Exception_Handling\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\SpringMVC_Form_Valid_Exception_Handling\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Jackrabbit">
+				<item value="D:\SapientTraining_Jan16\Jackrabbit\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\Jackrabbit\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="NodeHandsON">
+				<item value="D:\SapientTraining_Jan16\NodeHandsON\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\NodeHandsON\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="SpringJDBC">
+				<item value="D:\SapientTraining_Jan16\SpringJDBC\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\SpringJDBC\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="MyCollections">
+				<item value="D:\SapientTraining_Jan16\MyCollections\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\MyCollections\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="AngularExample">
+				<item value="D:\SapientTraining_Jan16\AngularExample\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\AngularExample\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="SpringWithAnnotations">
+				<item value="D:\SapientTraining_Jan16\SpringWithAnnotations\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\SpringWithAnnotations\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="IOExamples">
+				<item value="D:\SapientTraining_Jan16\IOExamples\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\IOExamples\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="ExceptionHandling">
+				<item value="D:\SapientTraining_Jan16\ExceptionHandling\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\ExceptionHandling\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="JSTL_Examples">
+				<item value="D:\SapientTraining_Jan16\JSTL_Examples\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\JSTL_Examples\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Ajax_JS_Library">
+				<item value="D:\SapientTraining_Jan16\Ajax_JS_Library\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\Ajax_JS_Library\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="ConverterService">
+				<item value="D:\SapientTraining_Jan16\ConverterService\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\ConverterService\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="ORMWithHibernate">
+				<item value="D:\SapientTraining_Jan16\ORMWithHibernate\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\ORMWithHibernate\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Threads">
+				<item value="D:\SapientTraining_Jan16\Threads\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\Threads\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="MyFirstProject">
+				<item value="D:\SapientTraining_Jan16\MyFirstProject\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\MyFirstProject\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="JavaScript_Examples">
+				<item value="D:\SapientTraining_Jan16\JavaScript_Examples\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\JavaScript_Examples\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Java8">
+				<item value="D:\SapientTraining_Jan16\Java8\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\Java8\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="CoreJava">
+				<item value="D:\SapientTraining_Jan16\CoreJava\javadoc.xml" key="antpath"/>
+				<item value="D:\SapientTraining_Jan16\CoreJava\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+		</section>
+	</section>
+	<section name="SourceActionDialog.methods">
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
+		<item value="false" key="FinalModifier"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="NewPackageWizardPage">
+		<item value="false" key="create_package_info_java"/>
+	</section>
+	<section name="JavadocWizardDialog">
+		<item value="508" key="DIALOG_WIDTH"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		<item value="518" key="DIALOG_HEIGHT"/>
+		<item value="470" key="DIALOG_X_ORIGIN"/>
+		<item value="95" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+	<section name="AddGetterSetterDialog">
+		<item value="false" key="RemoveFinal"/>
+		<item value="false" key="SortOrdering"/>
+	</section>
+	<section name="JarPackageWizard">
+		<item value="false" key="JarPackageWizardPage.INCLUDE_DIRECTORY_ENTRIES"/>
+		<item value="" key="JarManifestWizardPage.MANIFEST_LOCATION"/>
+		<item value="false" key="JarManifestWizardPage.SEAL_JAR"/>
+		<item value="true" key="JarPackageWizardPage.COMPRESS"/>
+		<item value="false" key="JarManifestWizardPage.REUSE_MANIFEST"/>
+		<item value="false" key="jarOptionsWizardPage.STORE_USE_SRC_FOLDERS"/>
+		<item value="true" key="jarOptionsWizardPage.EXPORT_WARNINGS"/>
+		<item value="" key="jarOptionsWizardPage.DESCRIPTION_LOCATION"/>
+		<item value="true" key="jarOptionsWizardPage.BUILD_IF_NEEDED"/>
+		<item value="true" key="JarPackageWizardPage.EXPORT_JAVA_FILES"/>
+		<item value="true" key="jarOptionsWizardPage.EXPORT_ERRORS"/>
+		<item value="true" key="JarManifestWizardPage.GENERATE_MANIFEST"/>
+		<item value="true" key="JarPackageWizardPage.EXPORT_CLASS_FILES"/>
+		<item value="false" key="JarPackageWizardPage.OVERWRITE"/>
+		<item value="false" key="jarOptionsWizardPage.SAVE_DESCRIPTION"/>
+		<item value="false" key="JarPackageWizardPage.REFACTORINGS"/>
+		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
+		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
+		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="D:\QuickProjects.jar"/>
+		</list>
+	</section>
+	<section name="JavaElementSearchActions">
+	</section>
+</section>

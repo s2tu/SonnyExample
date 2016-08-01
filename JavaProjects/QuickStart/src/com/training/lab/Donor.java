@@ -39,7 +39,7 @@ public class Donor {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	/**
 	 * 
 	 * @return email of donor.
@@ -68,7 +68,7 @@ public class Donor {
 	public  ArrayList<Donation> getDonations(){
 		return myDonations;
 	}
-	
+
 	/**
 	 * makes a donation to a specific product.
 	 * @param amount of donation.
@@ -81,7 +81,7 @@ public class Donor {
 		this.myDonations.add(donate);
 		portal.applyDonation(donate);
 	}
-	
+
 
 	/**
 	 * /make a donation to general project.

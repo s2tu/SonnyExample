@@ -1,0 +1,12 @@
+package com.training;
+
+public class Application3 {
+
+	public static void main(String[] args) {
+		BankAccount sonnyBankAcc = new BankAccount(1, "Sonny", 1000);
+		sonnyBankAcc.deposit(500);
+		sonnyBankAcc.widthdraw(500);
+
+	}
+
+}

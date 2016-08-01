@@ -1,0 +1,11 @@
+package com.training;
+
+public abstract class AbstractLoans {
+	//eligibility for loan
+	//calculate interest
+	
+	private double numyears;
+	private double interest;
+	public abstract double calculate_eligibility();
+	public abstract double calculate_interest();
+}

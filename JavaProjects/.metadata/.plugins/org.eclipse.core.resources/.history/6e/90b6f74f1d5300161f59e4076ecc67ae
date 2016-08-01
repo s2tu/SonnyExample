@@ -1,0 +1,68 @@
+package com.training.domains;
+
+/**
+ * @author stu1
+ *
+ */
+public class CreditCard {
+	private long cardNumber;
+	private String cardHolder;
+	private double creditLimit;
+	private double amountSpent;
+	
+	public CreditCard(){
+		super(); //here object is the super class
+	}
+
+	public CreditCard(long cardNumber, String cardHolder, double creditLimit, double amountSpent) {
+		super();
+		this.cardNumber = cardNumber;
+		this.cardHolder = cardHolder;
+		this.creditLimit = creditLimit;
+		this.amountSpent = amountSpent;
+	}
+	public CreditCard(long cardNumber){
+		super();
+		this.cardNumber = cardNumber;
+	}
+
+	public long getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(long cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public String getCardHolder() {
+		return cardHolder;
+	}
+
+	public void setCardHolder(String cardHolder) {
+		this.cardHolder = cardHolder;
+	}
+
+	public double getCreditLimit() {
+		return creditLimit;
+	}
+
+	public void setCreditLimit(double creditLimit) {
+		this.creditLimit = creditLimit;
+	}
+
+	public double calculateBullAmount(){
+		double billAmount = 0.0;
+		billAmount = amountSpent*0.05; 
+		return billAmount; 
+		
+	}
+
+	public double getAmountSpent() {
+		return amountSpent;
+	}
+
+	public void setAmountSpent(double amountSpent) {
+		this.amountSpent = amountSpent;
+	}
+	
+}

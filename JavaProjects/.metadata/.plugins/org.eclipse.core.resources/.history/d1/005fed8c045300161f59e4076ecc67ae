@@ -1,0 +1,15 @@
+package com.training;
+/**
+ * 
+ * @author stu1
+ *
+ */
+public class Greeting {
+  /**
+   * sends a message
+   * @return Returns a greeting msg
+   */
+  public String getMessage() {
+    return "Welcome to Java Programming";
+  }
+}

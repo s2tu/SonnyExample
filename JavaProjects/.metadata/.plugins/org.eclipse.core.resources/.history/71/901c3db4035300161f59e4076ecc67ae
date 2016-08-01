@@ -1,0 +1,13 @@
+package com.training;
+/**
+ * 
+ * @author stu1
+ *
+ */
+public class Application {
+  public static void main(String[] args) {
+    Greeting grtObject = new Greeting();
+    System.out.println(grtObject.getMessage());
+  }
+
+}

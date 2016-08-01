@@ -1,0 +1,18 @@
+package com.training;
+
+public abstract class AbstractLoans {
+	//eligibility for loan
+	//calculate interest
+	
+	private double numyears;
+
+	public abstract double calculate_eligibility();
+	public abstract double calculate_interest();
+	
+	public double getNumyears() {
+		return numyears;
+	}
+	public void setNumyears(double numyears) {
+		this.numyears = numyears;
+	}
+}

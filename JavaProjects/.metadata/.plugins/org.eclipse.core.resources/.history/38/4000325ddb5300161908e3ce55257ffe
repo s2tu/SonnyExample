@@ -1,0 +1,21 @@
+package com.training;
+
+public class Application4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LandLoan sonnylandloan = new LandLoan(100,5);
+		VehicleLoan sonnyvehicleloan = new VehicleLoan(100,5);
+		GoldLoan sonnygoldloan = new GoldLoan(100,5);
+		
+		System.out.println("Eligibility for Vehicle = "+   sonnyvehicleloan.calculate_eligibility());
+		System.out.println("Interest for Vehicle = "+   sonnyvehicleloan.calculate_interest());		
+		
+		System.out.println("Eligibility for Gold = "+   sonnygoldloan.calculate_eligibility());
+		System.out.println("Interest for Gold = "+   sonnygoldloan.calculate_interest());
+		
+		System.out.println("Eligibility for Land = "+   sonnylandloan.calculate_eligibility());
+		System.out.println("Interest for Land = "+   sonnylandloan.calculate_interest());			
+	}
+
+}

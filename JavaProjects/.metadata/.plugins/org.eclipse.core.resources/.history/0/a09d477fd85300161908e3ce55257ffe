@@ -1,0 +1,19 @@
+package com.training;
+
+public class VehicleLoan extends AbstractLoans {
+
+	@Override
+	public double calculate_eligibility() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double calculate_interest() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+
+}

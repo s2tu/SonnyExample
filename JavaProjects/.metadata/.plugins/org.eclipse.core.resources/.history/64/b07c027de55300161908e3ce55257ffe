@@ -1,0 +1,16 @@
+package com.training;
+
+import java.util.Scanner;
+
+public class Application5 {
+	
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		System.out.println("Select your car (1-4)");
+		int input = in.nextInt();
+		ShowRoom carshow = new NewShowRoom();
+		carshow.printQuote(carshow.getProduct(input));
+		in.close();
+	}
+
+}

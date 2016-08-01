@@ -1,0 +1,18 @@
+package com.training;
+
+public class SavingsAccount extends BankAccount{
+	@Override
+	public double widthdraw(double amount) {
+		// TODO Auto-generated method stub
+		//min balance 
+		//if 
+		double minbal = 600;
+		if(super.getBalance() - amount < minbal ){
+			System.out.println("Minimum balance not reached.  Widthdraw denied.");
+		}else{
+			super.widthdraw(amount);
+		}
+		return super.widthdraw(amount);
+	}
+	
+}

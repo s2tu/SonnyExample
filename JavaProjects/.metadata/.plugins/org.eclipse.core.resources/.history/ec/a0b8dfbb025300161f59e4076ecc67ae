@@ -1,0 +1,8 @@
+package com.training;
+
+public class Application {
+  public static void main(String[] args) {
+    Greeting grtObject = new Greeting();
+    System.out.println(grtObject.getMessage());
+  }
+}

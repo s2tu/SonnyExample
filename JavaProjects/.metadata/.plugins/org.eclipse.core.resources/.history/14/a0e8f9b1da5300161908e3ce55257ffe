@@ -1,0 +1,26 @@
+package com.training;
+
+public class GoldLoan extends AbstractLoans{
+	private double gramofgold;
+
+	GoldLoan(double gramgold, double numberyears){
+		gramofgold = gramgold;
+		super.setNumyears(numberyears);
+	}
+	
+	@Override
+	public double calculate_eligibility() {
+		// TODO Auto-generated method stub
+		double rupies = 2000;
+		super.setLoanamount(rupies*gramofgold);
+		return super.getLoanamount();
+	}
+
+	@Override
+	public double calculate_interest() {
+		// TODO Auto-generated method stub
+		double interest = 0.024;	
+		return interest*super.getNumyears()*super.getLoanamount();
+	}
+	
+}
