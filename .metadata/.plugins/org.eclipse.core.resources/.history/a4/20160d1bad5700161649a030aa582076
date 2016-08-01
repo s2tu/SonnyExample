@@ -1,0 +1,44 @@
+package com.CollectionsExample;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DonorImpl implements IDonor {
+
+  private List<Donor> donarList;
+  public DonorImpl(List<Donor> donarList){
+    super();
+    this.donarList = donarList;
+  }
+  public  DonorImpl() {
+    // TODO Auto-generated constructor stub
+    donarList = new ArrayList<Donor>();
+  }
+  
+  @Override
+  public boolean addDonor(Donor obj) {
+    boolean reuslt = false;
+    result = donarList.add(obj);
+    // TODO Auto-generated method stub
+    return result;
+  }
+
+  @Override
+  public boolean addDonors(Donor... dnrList) {
+    // TODO Auto-generated method stub
+    return false;
+  }
+
+  @Override
+  public void printDonorList() {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public List<Donor> getDonor() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+}

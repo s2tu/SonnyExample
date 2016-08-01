@@ -1,0 +1,11 @@
+package com.CollectionsExample;
+
+import java.util.Hashtable;
+
+public class MapExample {
+  public static void main(String[] args){
+    Hashtable<String, CreditCard> hashtableCredit = new Hashtable<String, CreditCard>();
+    hashtableCredit.put("A101", new CreditCard(101, "Ramesh", 10000, 0));
+    hashtableCredit.put("A102", new CreditCard(102, "Sonny", 10000, 0));
+  }
+}

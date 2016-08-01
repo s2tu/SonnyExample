@@ -1,0 +1,14 @@
+package com.RandomTesting;
+
+import java.awt.List;
+
+public class RandomTesting {
+
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    List test = new List();
+    test.add("test");
+    System.out.println(test[0]);
+  }
+
+}
