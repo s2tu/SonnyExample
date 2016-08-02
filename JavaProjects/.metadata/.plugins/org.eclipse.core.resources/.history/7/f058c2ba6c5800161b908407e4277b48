@@ -1,0 +1,73 @@
+/**
+ * 
+ */
+package donorInfo;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import interfaces.Manager;
+import projectInfo.ProjectManager;
+
+/**The donor manager is responsible for managing Donations and Donor details
+ * @author stu1
+ *
+ */
+public class DonorManager implements Manager{
+	
+	//the donor manager needs to have details about the donation to explain the project detials 
+	ProjectManager manager;
+	//donorID, donations
+	HashMap<Integer, ArrayList<Donation>> donationDatabase;
+	ArrayList<Donor> donors;
+	
+	public DonorManager(ProjectManager manager){
+		this.manager = manager;
+		this.donationDatabase = new HashMap<Integer, ArrayList<Donation>>();
+		this.donors = new ArrayList<Donor>();
+	}
+	
+	@Override
+	public void additem(Object item) {
+		// TODO Auto-generated method stub		
+		Donor newDonor = (Donor)item;
+		this.donors.add(newDonor);
+	}
+
+	@Override
+	public void removeitem(Object item) {
+		
+		for(Donor d:donors){
+			
+		}
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void displayAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	//Displays donations for the particular person
+	//projectID
+	@Override
+	public void displayOne(int itemID) {
+		// TODO Auto-generated method stub	
+	}
+	
+	public void makeDonation(Donor person, int projectID, double amount){
+		Donation donation = new Donation(projectID, amount, person);
+		if(donationDatabase.containsKey(person.getDonorID())){
+			ArrayList<Donation> newArrayList = new ArrayList<Donation>();
+			newArrayList.add(donation);
+			donationDatabase.put(person.getDonorID(), newArrayList);
+		}else{
+			ArrayList<Donation> donorDonations = donationDatabase.get(person.getDonorID());
+			donorDonations.add(donation);
+		}		
+		manager.updateProjectCosts(donation);
+	}
+
+}

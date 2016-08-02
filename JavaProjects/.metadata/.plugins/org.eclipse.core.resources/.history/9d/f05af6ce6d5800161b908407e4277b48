@@ -1,0 +1,60 @@
+package projectInfo;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import donorInfo.Donation;
+import interfaces.Manager;
+/**
+ *  The project Manager is responsible for managing and maintain projects
+ * @author stu1
+ *
+ */
+public class ProjectManager implements Manager {
+
+
+	ArrayList<Project>  projectDatabase;
+	/**
+	 * Adds a project based on projectID
+	 */
+	@Override
+	public void additem(Object item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * Removes a project based on ProjectID
+	 */
+	@Override
+	public void removeitem(Object item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * Display all projects and cost details
+	 */
+	@Override
+	public void displayAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * Display one project ID costdetails
+	 */
+	@Override
+	public void displayOne(int itemID) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	//Add donations to project
+	public void updateProjectCosts(Donation donation){
+		
+	}
+	
+
+}

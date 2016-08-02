@@ -1,0 +1,10 @@
+package domains;
+
+import java.io.Serializable;
+
+public class Invoice implements Serializable{
+	private int invoiceNumber;
+	private String customerName;
+	transient private double amount;
+	
+}

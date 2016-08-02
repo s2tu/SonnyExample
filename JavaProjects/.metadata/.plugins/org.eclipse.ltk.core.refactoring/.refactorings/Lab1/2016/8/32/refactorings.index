@@ -1,0 +1,5 @@
+1470110352039	Rename package 'donorPackage'
+1470111047293	Rename package 'Interfaces'
+1470111057878	Rename package 'Application'
+1470111148011	Rename type 'projectManager'
+1470114536775	Encapsulate field 'pendingCost'

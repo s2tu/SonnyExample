@@ -1,0 +1,66 @@
+package donorInfo;
+/**
+ * 
+ * @author stu1
+ *  Donation class keeps information of all donation data
+ */
+public class Donation {
+  private int donationID;
+  private int productId;
+  private double amount;
+  private Donor person;
+/**
+ * @return the donationID
+ */
+public int getDonationID() {
+	return donationID;
+}
+/**
+ * @param donationID the donationID to set
+ */
+public void setDonationID(int donationID) {
+	this.donationID = donationID;
+}
+/**
+ * @return the productId
+ */
+public int getProductId() {
+	return productId;
+}
+/**
+ * @param productId the productId to set
+ */
+public void setProductId(int productId) {
+	this.productId = productId;
+}
+/**
+ * @return the amount
+ */
+public double getAmount() {
+	return amount;
+}
+/**
+ * @param amount the amount to set
+ */
+public void setAmount(double amount) {
+	this.amount = amount;
+}
+/**
+ * @return the person
+ */
+public Donor getPerson() {
+	return person;
+}
+/**
+ * @param person the person to set
+ */
+public void setPerson(Donor person) {
+	this.person = person;
+}
+
+
+
+
+
+
+}

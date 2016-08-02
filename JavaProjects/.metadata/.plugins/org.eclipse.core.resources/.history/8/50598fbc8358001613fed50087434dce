@@ -1,0 +1,22 @@
+package application;
+
+import domains.Invoice;
+import domains.Utilities;
+
+public class Application {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Utilities tools = new Utilities();
+		Invoice test = new Invoice(1, "Sonny", 100000);
+		System.out.println(test);
+		tools.serializing(test);
+		
+		//if you modified the class and deserialized before serializing then you get issues
+		//error because the class are different
+		
+		//Invoice test3 = tools.deserializing();
+		//System.out.println(test3);
+	}
+
+}

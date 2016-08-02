@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package donorInfo;
+
+/**
+ * @author stu1
+ *
+ */
+public class DonorManager implements Manager{
+
+}

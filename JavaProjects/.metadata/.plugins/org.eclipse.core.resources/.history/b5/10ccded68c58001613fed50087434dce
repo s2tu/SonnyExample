@@ -1,0 +1,27 @@
+package domains;
+import java.io.*;
+import java.util.Collection;
+
+public class InvoiceIO {
+	public boolean writeDetails(Collection<Invoice> invList){
+		boolean result = false;
+		
+		try{
+			PrintWriter out = new PrintWriter(new FileWriter("readthisfile.txt"));
+			for(Invoice i: invList){
+				out.println(i.toString());
+			}	
+		}catch(FileNotFoundException e){
+			
+		}catch(IOException e){
+			
+		}
+		return result;
+	}
+	public Collection<Invoice> readDetails(){
+		Collection<Invoice> details = null;
+		FileReader fr = new FileReader("readthisfile.txt");
+		return details;
+		
+	}
+}

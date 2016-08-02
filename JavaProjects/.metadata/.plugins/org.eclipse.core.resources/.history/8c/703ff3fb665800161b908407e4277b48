@@ -1,0 +1,8 @@
+package Interfaces;
+
+public interface Manager<T> {
+	public void additem (T item);
+	public void removeitem (T item);
+	public void displayAll();
+	
+}

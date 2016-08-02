@@ -1,0 +1,11 @@
+package domains;
+
+import java.io.File;
+import java.io.ObjectOutputStream;
+
+public class Utilities {
+	public  void serializing(Object obj){
+		ObjectOutputStream out = new ObjectOutputStream(new File(""))
+		
+	}
+}

@@ -1,0 +1,52 @@
+package projectInfo;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import donorInfo.Donation;
+
+public class Project {
+	private String projectName;
+	private int projectID;
+	private String descriptionOfProject;
+	private double projectCost;
+	private double amountDonated;
+	HashMap<Integer, ArrayList<Donation>> donationDatabase;
+
+	
+
+	/**
+	 * 
+	 * @param donate the donation details 
+	 * @throws ImproperDonationException throws this if the donation exceeds the pending costs
+	 */
+	/*
+  public void addDonations(Donation donate) throws ImproperDonationException{
+    if(this.projectCost - donate.getAmount() < 0){
+      this.amountDonated = this.amountDonated + this.projectCost;
+      this.projectCost = 0;
+      throw new ImproperDonationException();
+    }
+    this.projectCost = this.projectCost  - donate.getAmount();
+    this.amountDonated = this.amountDonated  + donate.getAmount();
+
+    if(donate.getProductId() != -1){
+      Product product = this.productDatabase.get(donate.getProductId());
+      product.applyProductDonation(donate.getAmount());
+    }else{
+      //distribute the donation amount equally 
+      int amountProducts = this.productDatabase.size();
+      double distributeAmount = donate.getAmount()/amountProducts;
+      for(Product product: this.productDatabase.values()){
+        product.applyProductDonation(distributeAmount);
+      }
+    }
+  }
+	 */
+	//update cost for amount 
+
+
+
+
+
+}

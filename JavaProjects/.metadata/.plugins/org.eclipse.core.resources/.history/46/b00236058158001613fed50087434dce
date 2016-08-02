@@ -1,0 +1,17 @@
+package application;
+
+import domains.Invoice;
+import domains.Utilities;
+
+public class Application {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Utilities tools = new Utilities();
+		Invoice test = new Invoice(1, "Sonny", 100000);
+		tools.serializing(test);
+		Invoice test3 = tools.deserializing();
+		System.out.println(test3);
+	}
+
+}

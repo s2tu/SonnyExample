@@ -1,0 +1,9 @@
+package domains;
+import java.io.*;
+
+public class InvoiceIO {
+	public boolean writeDetails(Collection<Invoice> invList){
+		boolean result = false;
+		return result;
+	}
+}

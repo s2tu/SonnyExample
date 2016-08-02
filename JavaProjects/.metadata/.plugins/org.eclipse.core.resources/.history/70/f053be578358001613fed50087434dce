@@ -1,0 +1,27 @@
+package domains;
+
+import java.io.Serializable;
+
+public class Invoice implements Serializable{
+	private int invoiceNumber;
+	private String customerName;
+	private String customerNam2;
+	private transient double  amount;
+	/**
+	 * @param invoiceNumber
+	 * @param customerName
+	 * @param amount
+	 */
+	public Invoice(int invoiceNumber, String customerName, double amount) {
+		super();
+		this.invoiceNumber = invoiceNumber;
+		this.customerName = customerName;
+		this.amount = amount;
+	}
+
+	@Override
+	public String toString(){
+		return "" + this.invoiceNumber + ":" + this.customerName + ":" + this.amount;
+	}
+	
+}
