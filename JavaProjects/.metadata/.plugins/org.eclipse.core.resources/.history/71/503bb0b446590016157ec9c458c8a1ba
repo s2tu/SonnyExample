@@ -1,0 +1,13 @@
+package interfaces;
+
+import com.domains.Donor;
+
+public interface MyDAO<T> {
+	public void add(T d);
+	public void update(T d);
+	public void delete();
+	public void findAll();
+	int test = 0;
+	
+
+}

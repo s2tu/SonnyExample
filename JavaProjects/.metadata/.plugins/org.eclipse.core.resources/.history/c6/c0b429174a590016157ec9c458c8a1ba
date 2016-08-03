@@ -1,0 +1,34 @@
+package com.training.apps;
+
+import com.domains.Donor;
+import com.training.utils.DonorDAO;
+import com.training.utils.MySQLConnection;
+
+public class Application {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(MySQLConnection.getMyoracleConnection());
+		/**
+		 * 
+		 * Create a Interface MyDAO<T>
+		 * Interface should have CRUD operations (add, update, delete, findAll
+		 * 
+		 * Copy the Donor Class from the Previous Example
+		 * 
+		 * Create a Class Implementing the MYDAO (database access object) Interface
+		 * 
+		 * Complete the methods
+		 * 
+		 * Test Code using Application
+		 * 
+		 * 
+		 */
+		
+		DonorDAO insertTest = new DonorDAO();
+		Donor Sonny = new Donor(0, "Sonny", 23232,"blah@hotmail.com");
+		System.out.println(insertTest.add(Sonny));
+		
+	}
+
+}

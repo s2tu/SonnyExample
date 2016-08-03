@@ -1,0 +1,10 @@
+package interfaces;
+
+public interface MyDAO<T> {
+	public void add();
+	public void update();
+	public void delete();
+	public void findAll();
+	int test = 0;
+
+}

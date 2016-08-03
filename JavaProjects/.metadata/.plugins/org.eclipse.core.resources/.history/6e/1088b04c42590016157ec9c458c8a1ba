@@ -1,0 +1,11 @@
+package com.training.utils;
+
+import java.sql.Connection;
+
+public class MySQLConnection {
+	public static Connection getMyoracleConnection(){
+		Connection con = null;
+		return con;
+	}
+	
+}
