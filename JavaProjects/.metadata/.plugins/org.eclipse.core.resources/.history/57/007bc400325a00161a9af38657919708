@@ -1,0 +1,9 @@
+package com.domains;
+
+public class BankAccount {
+	private String AccountHolder; 
+	private long AccountNumber;
+	private double balance;
+	
+	
+}

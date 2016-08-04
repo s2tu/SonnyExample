@@ -1,0 +1,22 @@
+package com.domains;
+
+import exceptions.InsufficientBalance;
+
+public class BankAccount {
+	private String AccountHolder; 
+	private long AccountNumber;
+	private double balance;
+	
+	public void printPassBook(){	
+	}
+	public void deposit(){
+		
+	}
+	public void withdraw(double amount) throws InsufficientBalance{
+		if (balance - amount< 0){
+		  throw new InsufficientBalance();	
+		}
+		balance = balance - amount;
+	}
+	
+}
