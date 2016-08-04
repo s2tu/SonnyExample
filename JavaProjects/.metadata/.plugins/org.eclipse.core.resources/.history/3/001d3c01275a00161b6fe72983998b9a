@@ -1,0 +1,8 @@
+
+public class TestPerfectNumberbyParam {
+	private int numbers;
+	public TestPerfectNumberbyParam(int numbers){
+		super();
+		
+	}
+}

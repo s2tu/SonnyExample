@@ -1,9 +1,0 @@
-package com.training;
-
-public class CreditCard {
-	private long cardNumber;
-	private String cardHolder;
-	private double creditLimit;
-	
-	
-}

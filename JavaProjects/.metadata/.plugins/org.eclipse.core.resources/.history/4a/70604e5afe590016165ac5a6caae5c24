@@ -1,0 +1,8 @@
+package com.training.domains;
+
+public class CurrencyConverter {
+	
+	public double usdToINR(double usd){
+		return usd*65;
+	}
+}

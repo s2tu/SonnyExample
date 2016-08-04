@@ -1,0 +1,24 @@
+package com.training.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.training.domains.PrintGrades;
+
+public class PrintGradeTest {
+	private PrintGrades printerGrader;
+	
+	@Before
+	public void init(){
+		printerGrader = new PrintGrades();
+	
+	}
+	@Test
+	public void testGradeD() {
+		String actual = printerGrader.findResult(35);
+		assertArrayEquals("D", actual);
+	}
+
+}

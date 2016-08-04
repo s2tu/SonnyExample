@@ -1,0 +1,8 @@
+package com.training.domains;
+
+public class PrintGrades {
+	public String findResult(int mark){
+		String grade='O';
+		
+	}
+}

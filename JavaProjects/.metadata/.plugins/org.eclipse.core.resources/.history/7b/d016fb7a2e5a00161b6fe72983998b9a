@@ -1,0 +1,14 @@
+package ExceptionTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestMySqlConnection {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

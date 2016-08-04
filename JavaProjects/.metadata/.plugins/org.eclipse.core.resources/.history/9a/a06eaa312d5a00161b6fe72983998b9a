@@ -1,0 +1,11 @@
+package ExceptionTest;
+
+import java.sql.Connection;
+
+public class MYDaoTest {
+	@Test(expected java.lang.NullPointerException.class)
+	public void testConstructorThrowException(){
+		Connection con = null;
+		DonorDAO  dao = new DonorDAO(con);
+	}
+}

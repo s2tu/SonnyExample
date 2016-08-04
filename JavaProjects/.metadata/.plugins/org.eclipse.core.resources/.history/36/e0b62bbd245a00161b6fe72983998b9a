@@ -1,0 +1,12 @@
+
+public class FindPerfectNumber {
+	public boolean checkPerfectNumber(int number){
+		int total  = 0 ;
+		for(int counter = 0; i < number; i++){
+			if(number%counter == 0){
+				total = total + counter;
+			}
+		}
+		return total == number;
+	}
+}

@@ -1,0 +1,20 @@
+package com.training.domains;
+
+public class PrintMax {
+	public int findMax(int[] args){
+		int output = 0;
+		for(int i; i < args.length; i++){
+			if(i == 0){
+				output = i;
+			}else{
+				if(args[i] > output){
+					output = args[i];
+				}
+			}
+		}
+		
+		return output;
+	
+		
+	}
+}

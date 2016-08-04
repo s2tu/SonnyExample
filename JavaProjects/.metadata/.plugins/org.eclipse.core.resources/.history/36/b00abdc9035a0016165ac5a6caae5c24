@@ -1,0 +1,14 @@
+package com.training.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class PrintGradeTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

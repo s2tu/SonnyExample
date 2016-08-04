@@ -1,0 +1,6 @@
+
+public class FindPerfectNumber {
+	public boolean checkPerfectNumber(int number){
+		return false;
+	}
+}

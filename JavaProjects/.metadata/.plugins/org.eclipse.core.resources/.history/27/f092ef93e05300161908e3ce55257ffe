@@ -1,8 +1,0 @@
-package com.training;
-
-public interface IAutomobile {
-	public double getPrice();
-	public abstract String getColor();
-	String getModel();
-	
-}
