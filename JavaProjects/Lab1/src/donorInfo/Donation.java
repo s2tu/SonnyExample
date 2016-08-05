@@ -5,6 +5,7 @@ package donorInfo;
  *  Donation class keeps information of all donation data
  */
 public class Donation {
+  private int donationID;
   private int projectID;
   private double amount;
   private Donor person;

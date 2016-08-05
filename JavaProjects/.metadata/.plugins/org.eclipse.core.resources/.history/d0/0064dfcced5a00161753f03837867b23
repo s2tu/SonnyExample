@@ -1,0 +1,26 @@
+package com.training;
+
+import org.apache.log4j.Logger;
+
+public class CurrencyConverter {
+	
+	Logger log =  Logger.getRootLogger();
+	/**
+	 * @param log
+	 */
+	public CurrencyConverter(Logger log) {
+		super();
+	
+		log.info("Constructor is called");
+	}
+
+	public double usdToINR(double usd){
+			double amt = Math.abs(usd);
+			log.info("Constructor is called");
+			return 60*amt;
+			
+	}
+
+
+	
+}

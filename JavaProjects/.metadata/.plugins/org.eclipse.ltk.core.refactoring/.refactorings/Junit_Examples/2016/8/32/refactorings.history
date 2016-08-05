@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;CurrencyConverter.java&apos; to &apos;Log4jExamples&apos;&#x0D;&#x0A;- Original project: &apos;Junit_Examples&apos;&#x0D;&#x0A;- Destination element: &apos;Log4jExamples&apos;&#x0D;&#x0A;- Original element: &apos;com.training.domains.CurrencyConverter.java&apos;" description="Copy compilation unit" destination="=Log4jExamples" element1="/src&lt;com.training.domains{CurrencyConverter.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1470388671032" units="1" version="1.0"/>
+</session>

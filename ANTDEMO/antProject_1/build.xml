@@ -1,0 +1,6 @@
+<?xml-version ="1.0" ?>
+<project default="greet">
+  <target name="greet">
+    <echo message="Your ANT configuration is Read" />
+  </target>
+</project>

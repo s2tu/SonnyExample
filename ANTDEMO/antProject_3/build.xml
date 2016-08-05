@@ -1,0 +1,34 @@
+<?xml-version ="1.0" ?>
+
+
+<project default="run">
+ <property name="jarTarget" value="Jars"/> 
+ <property name="jarFile" value="TestGreeting.jar"/> 
+ <property name="destDir" value="."/>
+ <property name="mainclass" value="com.training.TestGreet"/>   
+ <target name="clean">
+    <delete dir="build"/>
+  </target>
+  <target name="compile" depends="clean">
+	<mkdir dir="build/classes"/>
+	<javac srcdir="src" destdir="build/classes"/>
+  </target>
+  <target name="run" depends="compile">
+	<java classname="com.training.TestGreet" fork="true">
+		<classpath>
+			<path location="build/classes"/>
+		</classpath>
+	</java>
+  </target>
+  <target name="jar" depends="compile">
+	<delete dir="${jarTarget}"/>
+        <mkdir dir="${jarTarget}"/>
+	<jar destfile="${jarTarget}/${jarFile}" basedir="${destDir}">
+		<fileset dir="${destDir}" />
+		<fileset dir="src" includes="**/*.java"/>
+		<manifest>
+			<attribute name="Main-Class" value="${mainclass}"/>
+		</manifest>
+	</jar>
+	</target>
+</project>

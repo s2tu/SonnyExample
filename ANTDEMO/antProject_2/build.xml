@@ -1,0 +1,18 @@
+<?xml-version ="1.0" ?>
+<project default="run">
+  <target name="clean">
+    <delete dir="build"/>
+  </target>
+  <target name="compile" depends="clean">
+	<mkdir dir="build/classes"/>
+	<javac srcdir="src" destdir="build/classes"/>
+  </target>
+  <target name="run" depends="compile">
+	<java classname="com.training.TestGreet" fork="true">
+		<classpath>
+			<path location="build/classes"/>
+		</classpath>
+	</java>
+  </target>
+
+</project>
