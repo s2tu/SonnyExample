@@ -1,0 +1,18 @@
+package ExceptionTest;
+
+import static org.junit.Assert.*;
+
+import java.sql.Connection;
+
+import org.junit.Test;
+import static java.lang.System.out;
+public class TestMySqlConnection {
+
+	@Test
+	public void testGetMyOracleConnection() {
+		out.println("test");
+		Connection con = MySQLConnection.getMyoracleConnection();
+		assertNotNull("Check Connection Paramters", con);
+	}
+
+}
