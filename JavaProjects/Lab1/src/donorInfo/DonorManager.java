@@ -16,14 +16,14 @@ import projectInfo.ProjectManager;
 public class DonorManager implements Manager{
 	String message;
 	//the donor manager needs to have details about the donation to explain the project detials 
-	ProjectManager manager;
+	ProjectManager projManager;
 	//donorID, donations
 	HashMap<Integer, ArrayList<Donation>> donationDatabase;
 	HashMap<Integer, Donor> donorsDatabase;
 	//ArrayList<Donor> donors;
 	
 	public DonorManager(ProjectManager manager){
-		this.manager = manager;
+		this.projManager = manager;
 		this.donationDatabase = new HashMap<Integer, ArrayList<Donation>>();
 		this.donorsDatabase = new HashMap<Integer, Donor>() ;
 	}
@@ -63,10 +63,22 @@ public class DonorManager implements Manager{
 	 * itemID is the peron's name
 	 */
 	@Override
-	public String displayOne(int itemID) {
+	public String displayOne(int donorID) {
+		ArrayList<Donation> donorDonations =  donationDatabase.get(donorID);
+		Donor donor = donorsDatabase.get(donorID);
+		String output = "";
+		//Donor Name
+		//Donor  Email
+		output = output +  "Donor Name:" +  donor.getName()  + "\n";
+		output = output +  "Email: " +  donor.getEmail()   + "\n";
+		output = output +  "Phone Number: " + donor.getHandPhone()  + "\n";
+		for(Donation d: donorDonations){
+			output = output + "Donation ID: " +  d.getDonationID();
+			output = output + "Amount: " +  d.getAmount();
+			output = output + projManager.displayProjectSimpleInfo(d.getProjectId());
+		}
 		
-		
-		return message;
+		return output;
 		// TODO Auto-generated method stub	
 	}
 	
@@ -86,7 +98,7 @@ public class DonorManager implements Manager{
 			ArrayList<Donation> donorDonations = donationDatabase.get(person.getDonorID());
 			donorDonations.add(donation);
 		}		
-		manager.updateProjectCosts(donation);
+		projManager.updateProjectCosts(donation);
 	}
 
 }

@@ -8,7 +8,7 @@ public class Donation {
   private int donationID;
   private int projectID;
   private double amount;
-  private Donor person;
+
 
 /**
  * @param projectID
@@ -19,7 +19,7 @@ public Donation(int projectID, double amount, Donor person) {
 	super();
 	this.projectID = projectID;
 	this.amount = amount;
-	this.person = person;
+
 }
 /**
  * @return the productId
@@ -45,17 +45,12 @@ public double getAmount() {
 public void setAmount(double amount) {
 	this.amount = amount;
 }
-/**
- * @return the person
- */
-public Donor getPerson() {
-	return person;
+
+public int getDonationID() {
+	return donationID;
 }
-/**
- * @param person the person to set
- */
-public void setPerson(Donor person) {
-	this.person = person;
+public void setDonationID(int donationID) {
+	this.donationID = donationID;
 }
 
 

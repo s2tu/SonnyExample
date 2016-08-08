@@ -2,12 +2,12 @@
 
 
 <project default="run">
+    
  <property name="jarTarget" value="build/jars"/> 
  <property name="jarFile" value="TestGreeting.jar"/> 
  <property name="destDir" value="build/classes"/>
  <property name="mainclass" value="com.training.TestGreet"/>
- <property name="docDir" value="doc"/>    
- 
+ <property name="docDir" value="doc"/>
  <target name="clean">
     <delete dir="build"/>
   </target>
@@ -25,18 +25,20 @@
   <target name="jar" depends="compile">
 	<!-- delete dir="${jarTarget}"/-->
         <mkdir dir="${jarTarget}"/>
-	<jar destfile="${jarTarget}/${jarFile}" basedir="${destDir}">
-		<fileset dir="${destDir}" />
+	<jar destfile="${jarTarget}/${jarFile}" basedir="${destDir}" >
+		<!-- fileset dir="${destDir}" /-->
 		<fileset dir="src" includes="**/*.java"/>
 		<manifest>
 			<attribute name="Main-Class" value="${mainclass}"/>
 		</manifest>
 	</jar>
 	</target>
-  <target name="doc" depends="compile" description="generate documentation">
+  <target depends="compile" name="doc" description="generate documentation">
+
+
 	<javadoc sourcepath="src" sourcefiles="src/*.java" destdir="${docDir}" windowtitle="ANT Application">
 		<bottom>
-			<![CDATA[Copyright 2016.-18 All Rights Reserved.]]>
+			<![CDATA[Copyright 2016.-18 All Rights Reserved.Sonny is cool.]]>
 		</bottom>
 		<group title ="core packages" packages="com.training.*"/>
 	</javadoc>
