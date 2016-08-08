@@ -58,20 +58,39 @@ public class ProjectManager implements Manager {
 	 */
 	@Override
 	public String displayOne(int itemID) {
-		// TODO Auto-generated method stub
-		return message;
+		String output = displayProjectSimpleInfo(itemID);
+		Project selectedProj = projectDatabase.get(itemID);
+		output =  output + "Amount Donated: " +  selectedProj.getAmountDonated() + "\n";
+		output =  output + "Pending Costs: " + getPendingCost(itemID) + "\n";
+		output =  output + "Description: " +  selectedProj.getDescriptionOfProject() + "\n";		
+		return output;
+
 	}
 	
+	public String displayProjectSimpleInfo(int projectID){
+		String output = "";
+		Project selectedProj = projectDatabase.get(projectID);
+		output =  output + "Project ID: "  + selectedProj.getProjectID() + "\n";
+		output =  output + "Name:"  + selectedProj.getProjectName() + "\n";
+		output =  output + "Description: " + selectedProj.getDescriptionOfProject() + "\n";
+		return output;
+		
+	}
+
+
 	
+	public double getPendingCost(int projID){
+		Project selectedProject =projectDatabase.get(projID);
+		return (selectedProject.getProjectCost() +  selectedProject.getAmountDonated());
+	}
 	//Add donations to project
 	public void updateProjectCosts(Donation donation){
 		Project selectedProject = projectDatabase.get(donation.getProjectId());
 		double  donatedAmount= selectedProject.getAmountDonated();
-		double pendingAmount = selectedProject.getPendingCost();
+		double pendingAmount =  selectedProject.getProjectCost() - donatedAmount;
 		donatedAmount = donation.getAmount() + donatedAmount;
 		pendingAmount = pendingAmount - donation.getAmount();
-		selectedProject.setAmountDonated(donatedAmount);
-		selectedProject.setPendingCost(pendingAmount);		
+		selectedProject.setAmountDonated(donatedAmount);	
 	}
 	
 

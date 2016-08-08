@@ -11,6 +11,7 @@ public class Donor{
 	private int donorID;
 	private String name;
 	private String email;
+	private long handPhone;
 	/**
 	 * @return the donorID
 	 */
@@ -53,6 +54,12 @@ public class Donor{
 		Donor newobj = (Donor)obj;
 		return (newobj.donorID == donorID && newobj.name == name && newobj.email == email);
 		
+	}
+	public long getHandPhone() {
+		return handPhone;
+	}
+	public void setHandPhone(long handPhone) {
+		this.handPhone = handPhone;
 	};
 
 

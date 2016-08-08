@@ -11,7 +11,7 @@ public class Project {
 	private String descriptionOfProject;
 	private double projectCost;
 	private double amountDonated;
-	private double pendingCost;
+	///private double pendingCost;
 
 	/**
 	 * @param projectName
@@ -95,12 +95,7 @@ public class Project {
 		return (this.projectName == itemProject.projectName && this.projectID == itemProject.projectID && this.descriptionOfProject == itemProject.descriptionOfProject && this.projectCost == itemProject.projectCost);
 		
 	}
-	public double getPendingCost() {
-		return pendingCost;
-	}
-	public void setPendingCost(double pendingCost) {
-		this.pendingCost = pendingCost;
-	}
+
 
 	/**
 	 * 
