@@ -14,7 +14,7 @@ public class test {
 		}
 		
 		HashMap<Integer, Integer> test = new HashMap<Integer,Integer>();
-		println("test");
+		
 	}
 
 }
