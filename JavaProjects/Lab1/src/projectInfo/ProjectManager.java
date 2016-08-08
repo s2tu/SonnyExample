@@ -1,47 +1,57 @@
 package projectInfo;
 
+import java.sql.CallableStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import donorInfo.Donation;
+import donorInfo.DonorDao;
 import interfaces.Manager;
 /**
  *  The project Manager is responsible for managing and maintain projects
  * @author stu1
  *
  */
-public class ProjectManager implements Manager {
+public class ProjectManager implements Manager<Project> {
 
 
 	private HashMap<Integer, Project>  projectDatabase;
+	protected ProjectDao projectDao;
 	
 	//This is the messager of the projectManager
 	private String message;
 	public ProjectManager() {
 		this.projectDatabase = new HashMap<Integer, Project>();
+		this.projectDao = new ProjectDao();
 	}
 	
 	/**
 	 * Adds a project based on projectID
 	 */
 	@Override
-	public void additem(Object item) {
-		// TODO Auto-generated method stub
+	public int additem(Project item) {
 		Project aProject = (Project)item;
-		if(!projectDatabase.containsKey(aProject.getProjectID())){
-			projectDatabase.put(aProject.getProjectID(), aProject);
+		int result = projectDao.add(aProject);	
+		//make this a add exception
+		if(result == 0){
+			System.out.println("Error: adding project to database");
 		}
-	}
+		return result;
+	}	
 
 	/**
 	 * Removes a project based on ProjectID
 	 */
 	@Override
-	public void removeitem(Object item) {
-		Project aProject = (Project)item;
-		if(!projectDatabase.containsKey(aProject.getProjectID())){
-			projectDatabase.remove(aProject.getProjectID());
-		}			
+	public int removeitem(int projectID) {
+		int result = projectDao.delete(projectID);
+		//make this a add exception
+		if(result == 0){
+			System.out.println("Error: Removing project to database");
+		}
+		return result;
+		
 	}
 
 	/**
@@ -49,49 +59,69 @@ public class ProjectManager implements Manager {
 	 */
 	@Override
 	public String displayAll() {
+		String output = "";
+		ArrayList<Project> projectTable = projectDao.findAll();
+		for(Project proj:projectTable){
+			output =  output + displayProjectSimpleInfo(proj);
+			output =  output + displayProjectCostInfo(proj);
+			output = output + "\n";
+		}
 		// TODO Auto-generated method stub
-		return message;
+		return output;
 	}
 
 	/**
-	 * Display one project ID costdetails
+	 * Display one project ID this method is only used by projectManager 
 	 */
 	@Override
-	public String displayOne(int itemID) {
-		String output = displayProjectSimpleInfo(itemID);
-		Project selectedProj = projectDatabase.get(itemID);
-		output =  output + "Amount Donated: " +  selectedProj.getAmountDonated() + "\n";
-		output =  output + "Pending Costs: " + getPendingCost(itemID) + "\n";
-		output =  output + "Description: " +  selectedProj.getDescriptionOfProject() + "\n";		
+	public String displayOne(int projID) {
+		Project aProject =  projectDao.find(projID);
+		String output = "";
+		output =  output + displayProjectSimpleInfo(aProject);
+		output =  output + displayProjectCostInfo(aProject);
 		return output;
 
 	}
 	
-	public String displayProjectSimpleInfo(int projectID){
+	/**
+	 * This method is used by the DonorManager in order to display simple information
+	 * @param proj
+	 * @return
+	 */
+	public String displayProjectSimpleInfo(Project proj){
 		String output = "";
-		Project selectedProj = projectDatabase.get(projectID);
-		output =  output + "Project ID: "  + selectedProj.getProjectID() + "\n";
-		output =  output + "Name:"  + selectedProj.getProjectName() + "\n";
-		output =  output + "Description: " + selectedProj.getDescriptionOfProject() + "\n";
+		output =  output + "Project ID: "  + proj.getProjectID() + "\n";
+		output =  output + "Name:"  + proj.getProjectName() + "\n";
+		output =  output + "Description: " + proj.getDescriptionOfProject() + "\n";
 		return output;
 		
 	}
-
-
 	
-	public double getPendingCost(int projID){
-		Project selectedProject =projectDatabase.get(projID);
-		return (selectedProject.getProjectCost() +  selectedProject.getAmountDonated());
+	public String displayProjectCostInfo(Project proj){
+		String output = "";
+		output =  output + "Amount Donated: " +  proj.getAmountDonated() + "\n";
+		output =  output + "Pending Costs: " + getPendingCost(proj) + "\n";			
+		return output;
+		
+	}	
+	
+	//if the pending cost is -negative then we got a problem
+	//raise exception saying that project pending cost have been met
+	public double getPendingCost(Project proj){
+
+		return (proj.getProjectCost() -  proj.getAmountDonated());
 	}
-	//Add donations to project
-	public void updateProjectCosts(Donation donation){
-		Project selectedProject = projectDatabase.get(donation.getProjectId());
-		double  donatedAmount= selectedProject.getAmountDonated();
-		double pendingAmount =  selectedProject.getProjectCost() - donatedAmount;
-		donatedAmount = donation.getAmount() + donatedAmount;
-		pendingAmount = pendingAmount - donation.getAmount();
-		selectedProject.setAmountDonated(donatedAmount);	
+	//Add the donation to the project
+	public int updateProjectCosts(Donation donation){
+		int result =  projectDao.update(donation.getProjectId(), donation.getAmount());
+		if (result == 0){
+			System.out.println("Error: Updating donation for project.");
+		}
+		return result;
+		 
 	}
+
+
 	
 
 }

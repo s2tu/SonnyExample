@@ -9,23 +9,21 @@ public class Donation {
   private int projectID;
   private double amount;
 
-
-/**
- * @param projectID
- * @param amount
- * @param person
- */
-public Donation(int projectID, double amount, Donor person) {
-	super();
-	this.projectID = projectID;
-	this.amount = amount;
-
-}
 /**
  * @return the productId
  */
 public int getProjectId() {
 	return projectID;
+}
+/**
+ * @param donationID
+ * @param projectID
+ * @param amount
+ */
+public Donation(int projectID, double amount) {
+	super();
+	this.projectID = projectID;
+	this.amount = amount;
 }
 /**
  * @param productId the productId to set

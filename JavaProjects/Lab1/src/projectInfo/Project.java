@@ -19,12 +19,13 @@ public class Project {
 	 * @param descriptionOfProject
 	 * @param projectCost
 	 */
-	public Project(String projectName, int projectID, String descriptionOfProject, double projectCost) {
+	public Project(String projectName, int projectID, String descriptionOfProject, double projectCost,double amountDonated) {
 		super();
 		this.projectName = projectName;
 		this.projectID = projectID;
 		this.descriptionOfProject = descriptionOfProject;
 		this.projectCost = projectCost;
+		this.amountDonated = amountDonated;
 		
 	}
 	/**

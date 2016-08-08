@@ -13,40 +13,25 @@ import projectInfo.ProjectManager;
  * @author stu1
  *
  */
-public class DonorManager implements Manager{
+public class DonorManager implements Manager<Donor>{
 	String message;
 	//the donor manager needs to have details about the donation to explain the project detials 
 	ProjectManager projManager;
 	//donorID, donations
 	HashMap<Integer, ArrayList<Donation>> donationDatabase;
 	HashMap<Integer, Donor> donorsDatabase;
+	
+	DonorDao donorDao;
+	
 	//ArrayList<Donor> donors;
 	
 	public DonorManager(ProjectManager manager){
 		this.projManager = manager;
 		this.donationDatabase = new HashMap<Integer, ArrayList<Donation>>();
 		this.donorsDatabase = new HashMap<Integer, Donor>() ;
+		this.donorDao = new DonorDao();
 	}
 	
-	@Override
-	public void additem(Object item) {
-		// TODO Auto-generated method stub		
-		Donor newDonor = (Donor)item;
-		if(!donorsDatabase.containsKey(newDonor.getDonorID())){
-			donorsDatabase.put(newDonor.getDonorID(), newDonor);
-		}			
-	}
-
-	@Override
-	public void removeitem(Object item) {
-		Donor aDonor = (Donor)item;
-		if(donorsDatabase.containsKey(aDonor.getDonorID())){
-			donorsDatabase.remove(aDonor.getDonorID());
-		}	
-		if(donationDatabase.containsKey(aDonor.getDonorID())){
-			donationDatabase.remove(aDonor.getDonorID());
-		}	
-	}
 
 	/**
 	 * Display Donations for everyone 
@@ -57,30 +42,6 @@ public class DonorManager implements Manager{
 		// TODO Auto-generated method stub
 		
 	}
-
-	/**
-	 * Displays donations for the particular person	
-	 * itemID is the peron's name
-	 */
-	@Override
-	public String displayOne(int donorID) {
-		ArrayList<Donation> donorDonations =  donationDatabase.get(donorID);
-		Donor donor = donorsDatabase.get(donorID);
-		String output = "";
-		//Donor Name
-		//Donor  Email
-		output = output +  "Donor Name:" +  donor.getName()  + "\n";
-		output = output +  "Email: " +  donor.getEmail()   + "\n";
-		output = output +  "Phone Number: " + donor.getHandPhone()  + "\n";
-		for(Donation d: donorDonations){
-			output = output + "Donation ID: " +  d.getDonationID();
-			output = output + "Amount: " +  d.getAmount();
-			output = output + projManager.displayProjectSimpleInfo(d.getProjectId());
-		}
-		
-		return output;
-		// TODO Auto-generated method stub	
-	}
 	
 	/**
 	 * 
@@ -89,7 +50,7 @@ public class DonorManager implements Manager{
 	 * @param amount
 	 */
 	public void makeDonation(Donor person, int projectID, double amount){
-		Donation donation = new Donation(projectID, amount, person);
+		Donation donation = new Donation(projectID, amount);
 		if(donationDatabase.containsKey(person.getDonorID())){
 			ArrayList<Donation> newArrayList = new ArrayList<Donation>();
 			newArrayList.add(donation);
@@ -99,6 +60,28 @@ public class DonorManager implements Manager{
 			donorDonations.add(donation);
 		}		
 		projManager.updateProjectCosts(donation);
+	}
+
+
+	@Override
+	public int removeitem(int itemID) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String displayOne(int itemID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+	@Override
+	public int additem(Donor item) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

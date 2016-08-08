@@ -7,7 +7,7 @@ import org.apache.log4j.PatternLayout;
 
 public class QuickStart {
 	static Logger logger = Logger.getLogger("example");
-	static Logger root = Logger.getRootLogger();
+	//static Logger root = Logger.getRootLogger();
 	
 	public static void main(String args[]){
 		logger.setAdditivity(false);  //the child logger not gonna be extended to parent one
