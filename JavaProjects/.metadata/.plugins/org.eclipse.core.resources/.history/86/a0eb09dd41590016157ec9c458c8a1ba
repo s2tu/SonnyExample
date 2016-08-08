@@ -1,4 +1,0 @@
-db.driverClass=oracle.jdbc.driver.OracleDriver
-db.driverURL= 
-db.userName=system
-db.password=sapjuly16

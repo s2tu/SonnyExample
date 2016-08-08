@@ -1,8 +1,0 @@
-package exceptions;
-
-public class IssufficentBalance extends Exception{
-	static String message = "The account does not have sufficient amount of money.";
-	IssufficentBalance(){
-		super(message);
-	}
-}

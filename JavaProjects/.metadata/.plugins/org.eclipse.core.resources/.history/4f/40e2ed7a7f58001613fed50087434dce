@@ -1,7 +1,0 @@
-package domains;
-
-public class Invoice {
-	private int invoiceNumber;
-	private String customerName;
-	private double amount;
-}

@@ -1,7 +1,0 @@
-package Interfaces;
-
-public interface Manager<T> {
-	public void add (T item);
-	
-	
-}
