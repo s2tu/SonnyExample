@@ -1,6 +1,6 @@
 package com.training;
 
-@Funct
+@FunctionalInterface
 
 public class QuickStart {
 
