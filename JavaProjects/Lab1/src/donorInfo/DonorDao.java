@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import daoUtils.DAO;
@@ -104,5 +106,31 @@ public class DonorDao implements DAO<Donor>{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	//returns a array of key values pairs with variable type
+	public ArrayList<Map<String, Object>> getDonationsForDonor(int donorID){
+		ArrayList<Map<String, Object>> donationProjectResult = new ArrayList<Map<String, Object>>();
+		try{	
+			//JOINS THE PROJECT WITH THE DONATIONS TABLE
+			String sqlCall = "SELECT * FROM " + this.tableName +  " INNER JOIN PROJECTS ON DONATIONS.PROJECT_ID = PROJECTS.PROJECT_ID"
+		    + " WHERE DONOR_ID=?";
+			PreparedStatement preparedStatment =  this.con.prepareStatement(sqlCall);
+			preparedStatment.setInt(1, donorID);
+			ResultSet donorsDonationSet =  preparedStatment.executeQuery();
+			Map<String, Object> donationProjectData = new HashMap<String,Object>();
+			while(donorsDonationSet.next()){
+				donationProjectData = new HashMap<String, Object>();		 
+				//MORE ELEMENTS CAN BE ADDED HERE
+				donationProjectData.put("DONATION_ID", donorsDonationSet.getInt("DONATION_ID"));
+				donationProjectData.put("DONOR_ID", donorsDonationSet.getInt("DONOR_ID"));
+				donationProjectData.put("DONATION_AMOUNT", donorsDonationSet.getDouble("DONATION_AMOUNT"));
+				donationProjectData.put("DONATION_DATE", donorsDonationSet.getDate("DONATION_DATE"));
+				donationProjectData.put("PROJECT_NAME", donorsDonationSet.getString("PROJECT_NAME"));
+				donationProjectResult.add(donationProjectData);			
+			}
 
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return donationProjectResult;
+	}
 }

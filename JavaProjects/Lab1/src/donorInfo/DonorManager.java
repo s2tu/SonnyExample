@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import donationInfo.Donation;
+import donationInfo.DonationsDao;
 import interfaces.Manager;
 import projectInfo.Project;
 import projectInfo.ProjectDao;
@@ -41,9 +43,11 @@ public class DonorManager implements Manager<Donor>{
 		for(Donor d:donorList){
 			message  = message + displayDonorInfo(d)  +  displayDonorDonationInfo(d.getDonorID()) + "\n";
 		}
-	
 		return message;
 	}
+	
+	
+	
 	
 	//makeDonation 
 	//takes in donorID
@@ -51,7 +55,7 @@ public class DonorManager implements Manager<Donor>{
 	//amount
 	//then uses the donationsDAO to do the 
 	public int makeDonation(int donationID, int donorID, int projectID, double amount){
-		int result = donationDoa.add(new Donation(donationID, projectID, projectID, amount, new Date()));
+		int result = donationDoa.add(new Donation(donationID, projectID, donorID, amount, new Date()));
 		if(result == 0){
 			System.out.println("Error: Making Donation");
 		}
@@ -97,7 +101,7 @@ public class DonorManager implements Manager<Donor>{
 	//just give it a DAO? 
 	public String displayDonorDonationInfo(int donorID){
 		String message ="";
-		ArrayList<Map<String, Object>> dataResult = donationDoa.getDonationsForDonor(donorID);
+		ArrayList<Map<String, Object>> dataResult = donorDao.getDonationsForDonor(donorID);
 		for(Map<String, Object> data:dataResult){		
 			message = message  + "\t Donation ID: " + data.get("DONATION_ID")  + "\n";
 			message = message  + "\t Project Name: " + data.get("PROJECT_NAME")   + "\n";

@@ -29,9 +29,6 @@ public class ProjectDao implements DAO<Project>{
 	}
 
 
-
-
-
 	@Override
 	public int add(Project proj) {
 		// TODO Auto-generated method stub
@@ -57,7 +54,7 @@ public class ProjectDao implements DAO<Project>{
 	}
 
 	@Override
-	public Project find(int projID) {
+	public Project find(int projID) throws NullPointerException{
 		String searchQuery = "select * from "  + tableName  +   " where PROJECT_ID = ?";
 		try{
 			PreparedStatement prepareStatement = this.con.prepareStatement(searchQuery);
@@ -76,9 +73,9 @@ public class ProjectDao implements DAO<Project>{
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		throw new NullPointerException("The Project could not be found.");
 		// TODO Auto-generated method stub
-		return null;
-	}
+		}
 
 
 	@Override

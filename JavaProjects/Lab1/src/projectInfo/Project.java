@@ -3,7 +3,7 @@ package projectInfo;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import donorInfo.Donation;
+import donationInfo.Donation;
 
 public class Project {
 	private String projectName;

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import donorInfo.Donation;
+import donationInfo.Donation;
 import donorInfo.DonorDao;
 import interfaces.Manager;
 /**
@@ -76,14 +76,19 @@ public class ProjectManager implements Manager<Project> {
 	 */
 	@Override
 	public String displayOne(int projID) {
-		Project aProject =  projectDao.find(projID);
-		String output = "";
-		output =  output + displayProjectSimpleInfo(aProject);
-		output =  output + displayProjectCostInfo(aProject);
-		output =  output + displayProjectDonations(aProject.getProjectID());
-		//display donations info
-		return output;
-
+		try{
+			Project aProject =  projectDao.find(projID);		
+			String output = "";
+			output =  output + displayProjectSimpleInfo(aProject);
+			output =  output + displayProjectCostInfo(aProject);
+			output =  output + displayProjectDonations(aProject.getProjectID());
+			//display donations info
+			return output;
+		}catch(NullPointerException e){
+			//there should be logging here
+			System.out.println(e.getMessage());
+			return null;
+		}
 	}
 	
 	/**

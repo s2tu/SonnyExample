@@ -1,4 +1,4 @@
-package donorInfo;
+package donationInfo;
 
 import java.util.Date;
 
