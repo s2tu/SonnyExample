@@ -4,6 +4,7 @@ import java.sql.CallableStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import donorInfo.Donation;
 import donorInfo.DonorDao;
@@ -16,13 +17,11 @@ import interfaces.Manager;
 public class ProjectManager implements Manager<Project> {
 
 
-	private HashMap<Integer, Project>  projectDatabase;
+
 	protected ProjectDao projectDao;
 	
 	//This is the messager of the projectManager
-	private String message;
 	public ProjectManager() {
-		this.projectDatabase = new HashMap<Integer, Project>();
 		this.projectDao = new ProjectDao();
 	}
 	
@@ -64,6 +63,8 @@ public class ProjectManager implements Manager<Project> {
 		for(Project proj:projectTable){
 			output =  output + displayProjectSimpleInfo(proj);
 			output =  output + displayProjectCostInfo(proj);
+			output =  output + displayProjectDonations(proj.getProjectID());
+			//displayDonations info
 			output = output + "\n";
 		}
 		// TODO Auto-generated method stub
@@ -79,6 +80,8 @@ public class ProjectManager implements Manager<Project> {
 		String output = "";
 		output =  output + displayProjectSimpleInfo(aProject);
 		output =  output + displayProjectCostInfo(aProject);
+		output =  output + displayProjectDonations(aProject.getProjectID());
+		//display donations info
 		return output;
 
 	}
@@ -104,6 +107,26 @@ public class ProjectManager implements Manager<Project> {
 		return output;
 		
 	}	
+	//take a projID 
+	//display donation content for ProjectID
+	public String displayProjectDonations(int projID){
+		String message = "";
+		ArrayList<Map<String, Object>> dataResult = projectDao.getDonationsForProject(projID);
+		if(dataResult.size() !=0){
+			 message = "\t PROJECT DONATIONS ---------\n";
+		}
+		for(Map<String, Object> data:dataResult){		
+			message = message  + "\t Donation ID: " + data.get("DONATION_ID")  + "\n";
+			message = message  + "\t Donation Amount: " + data.get("DONATION_AMOUNT")  + "\n";
+			message = message  + "\t Name: " + data.get("DONOR_NAME")  + "\n";
+			message = message  + "\t Email: " + data.get("DONOR_EMAIL")  + "\n";
+			message = message  + "\t Date: " + data.get("DONATION_DATE")  + "\n\n";		
+		}
+		return message;
+	}
+	
+	
+	
 	
 	//if the pending cost is -negative then we got a problem
 	//raise exception saying that project pending cost have been met
@@ -111,15 +134,8 @@ public class ProjectManager implements Manager<Project> {
 
 		return (proj.getProjectCost() -  proj.getAmountDonated());
 	}
-	//Add the donation to the project
-	public int updateProjectCosts(Donation donation){
-		int result =  projectDao.update(donation.getProjectId(), donation.getAmount());
-		if (result == 0){
-			System.out.println("Error: Updating donation for project.");
-		}
-		return result;
-		 
-	}
+	
+
 
 
 	

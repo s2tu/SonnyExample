@@ -1,4 +1,7 @@
 package donorInfo;
+
+import java.util.Date;
+
 /**
  * 
  * @author stu1
@@ -6,8 +9,10 @@ package donorInfo;
  */
 public class Donation {
   private int donationID;
+  private int donorID;
   private int projectID;
   private double amount;
+  private Date dateOfDonation;
 
 /**
  * @return the productId
@@ -20,10 +25,13 @@ public int getProjectId() {
  * @param projectID
  * @param amount
  */
-public Donation(int projectID, double amount) {
+public Donation(int donationID, int projectID, int donorID,  double amount, Date dateOfDonation) {
 	super();
+	this.donationID = donationID;
 	this.projectID = projectID;
 	this.amount = amount;
+	this.donorID = donorID;
+	this.setDateOfDonation(dateOfDonation);
 }
 /**
  * @param productId the productId to set
@@ -49,6 +57,19 @@ public int getDonationID() {
 }
 public void setDonationID(int donationID) {
 	this.donationID = donationID;
+}
+public int getDonorID() {
+	return donorID;
+}
+public void setDonorID(int donorID) {
+	this.donorID = donorID;
+}
+
+public Date getDateOfDonation() {
+	return dateOfDonation;
+}
+public void setDateOfDonation(Date dateOfDonation) {
+	this.dateOfDonation = dateOfDonation;
 }
 
 

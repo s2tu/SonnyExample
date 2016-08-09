@@ -12,26 +12,15 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 import daoUtils.DAO;
+import daoUtils.MySQLConnection;
 
 public class DonorDao implements DAO<Donor>{
-	public Connection con;
-	public String tableName;
+	protected Connection con;
+	protected String tableName;
 	
 	public DonorDao() {
-		FileInputStream inStream;
-		try {
-			this.tableName = "DONORS";
-			inStream = new FileInputStream(new File("DbConnections.properties"));
-			Properties props = new Properties();
-			props.load(inStream);
-			Class.forName(props.getProperty("db.driverClass"));
-			con = DriverManager.getConnection(props.getProperty("db.driverURL"),
-											props.getProperty("db.userName"),
-											props.getProperty("db.password"));			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		this.tableName = "DONORS";
+		this.con = MySQLConnection.getMyoracleConnection();
 	}
 	
 

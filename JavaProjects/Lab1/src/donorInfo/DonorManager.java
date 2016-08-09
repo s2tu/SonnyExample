@@ -4,9 +4,14 @@
 package donorInfo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import interfaces.Manager;
+import projectInfo.Project;
+import projectInfo.ProjectDao;
 import projectInfo.ProjectManager;
 
 /**The donor manager is responsible for managing Donations and Donor details
@@ -14,74 +19,105 @@ import projectInfo.ProjectManager;
  *
  */
 public class DonorManager implements Manager<Donor>{
-	String message;
-	//the donor manager needs to have details about the donation to explain the project detials 
-	ProjectManager projManager;
-	//donorID, donations
-	HashMap<Integer, ArrayList<Donation>> donationDatabase;
-	HashMap<Integer, Donor> donorsDatabase;
+
 	
-	DonorDao donorDao;
+	protected DonorDao donorDao;
+	protected DonationsDao donationDoa;
+
 	
-	//ArrayList<Donor> donors;
-	
-	public DonorManager(ProjectManager manager){
-		this.projManager = manager;
-		this.donationDatabase = new HashMap<Integer, ArrayList<Donation>>();
-		this.donorsDatabase = new HashMap<Integer, Donor>() ;
+	public DonorManager(){
 		this.donorDao = new DonorDao();
+		this.donationDoa = new DonationsDao();
 	}
 	
 
 	/**
-	 * Display Donations for everyone 
+	 * Display all registered users and their donations if any?yeah...
 	 */
 	@Override
 	public String displayAll() {
+		ArrayList<Donor> donorList =  donorDao.findAll();
+		String message="";
+		for(Donor d:donorList){
+			message  = message + displayDonorInfo(d)  +  displayDonorDonationInfo(d.getDonorID()) + "\n";
+		}
+	
 		return message;
-		// TODO Auto-generated method stub
-		
 	}
 	
+	//makeDonation 
+	//takes in donorID
+	//projectID 
+	//amount
+	//then uses the donationsDAO to do the 
+	public int makeDonation(int donationID, int donorID, int projectID, double amount){
+		int result = donationDoa.add(new Donation(donationID, projectID, projectID, amount, new Date()));
+		if(result == 0){
+			System.out.println("Error: Making Donation");
+		}
+		
+		return result;
+	}
+
+	@Override
+	public int removeitem(int donorID) {
+		
+		int result = donorDao.delete(donorID);
+		if(result == 0){
+			System.out.println("Error: removing donor from database");
+		}
+		//should I remove 
+		// TODO Auto-generated method stub
+		return result;
+	}
+
 	/**
-	 * 
-	 * @param person
-	 * @param projectID
-	 * @param amount
+	 * display one information of user and all donation info
 	 */
-	public void makeDonation(Donor person, int projectID, double amount){
-		Donation donation = new Donation(projectID, amount);
-		if(donationDatabase.containsKey(person.getDonorID())){
-			ArrayList<Donation> newArrayList = new ArrayList<Donation>();
-			newArrayList.add(donation);
-			donationDatabase.put(person.getDonorID(), newArrayList);
-		}else{
-			ArrayList<Donation> donorDonations = donationDatabase.get(person.getDonorID());
-			donorDonations.add(donation);
-		}		
-		projManager.updateProjectCosts(donation);
-	}
-
-
 	@Override
-	public int removeitem(int itemID) {
+	public String displayOne(int donorID) {
+		Donor donor = donorDao.find(donorID);
+		String message = displayDonorInfo(donor) + displayDonorDonationInfo(donorID);
+		//need to add the donation info
 		// TODO Auto-generated method stub
-		return 0;
+		return message;
 	}
 
-	@Override
-	public String displayOne(int itemID) {
-		// TODO Auto-generated method stub
-		return null;
+	public String displayDonorInfo(Donor donor){
+		String message=  "";
+		//display name email and donor id
+		message = "Donor ID: "  + donor.getDonorID() + "\n";
+		message = message + "Name: "  + donor.getName() + "\n";
+		message = message + "Email: "  + donor.getEmail() + "\n";
+		return message;
 	}
 
-
-
-
+	
+	//The problem with this is that I have a project ID where I want to translate the name
+	//just give it a DAO? 
+	public String displayDonorDonationInfo(int donorID){
+		String message ="";
+		ArrayList<Map<String, Object>> dataResult = donationDoa.getDonationsForDonor(donorID);
+		for(Map<String, Object> data:dataResult){		
+			message = message  + "\t Donation ID: " + data.get("DONATION_ID")  + "\n";
+			message = message  + "\t Project Name: " + data.get("PROJECT_NAME")   + "\n";
+			message = message  + "\t Amount: " + data.get("DONATION_AMOUNT") + "\n";
+			message = message  + "\t Date: " +  data.get("DONATION_DATE")   + "\n";		
+		}
+		return message;
+	}
+	
 	@Override
 	public int additem(Donor item) {
+		int result = donorDao.add(item);
+		if(result == 0){
+			System.out.println("Error: adding donor from database.");
+		}
+		//should I remove 
 		// TODO Auto-generated method stub
-		return 0;
+		return result;
 	}
+	
+	//authenticate check donor's email with database
 
 }

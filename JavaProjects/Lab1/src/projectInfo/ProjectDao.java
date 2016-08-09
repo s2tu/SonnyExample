@@ -9,32 +9,23 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 
 
 import daoUtils.DAO;
+import daoUtils.MySQLConnection;
 
 public class ProjectDao implements DAO<Project>{
-	public Connection con;
-	public String tableName;
+	protected Connection con;
+	protected String tableName;
 	
 	
 	public ProjectDao() {
 		this.tableName = "PROJECTS";
-		FileInputStream inStream;
-		try {
-			inStream = new FileInputStream(new File("DbConnections.properties"));
-			Properties props = new Properties();
-			props.load(inStream);
-			Class.forName(props.getProperty("db.driverClass"));
-			con = DriverManager.getConnection(props.getProperty("db.driverURL"),
-											props.getProperty("db.userName"),
-											props.getProperty("db.password"));			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		this.con = MySQLConnection.getMyoracleConnection();
 	}
 
 
@@ -74,12 +65,14 @@ public class ProjectDao implements DAO<Project>{
 			ResultSet output  = prepareStatement.executeQuery();
 			
 			while(output.next()){
-				return new Project(output.getString(2), 
+				
+				Project obtainedProj  =  new Project(output.getString(2), 
 						output.getInt(1), 
 						output.getString(3),
-						output.getDouble(4),
-						output.getDouble(5)
-						);}
+						output.getDouble(4));
+				obtainedProj.setAmountDonated(output.getDouble(5));
+				return obtainedProj;
+			}				
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -100,12 +93,12 @@ public class ProjectDao implements DAO<Project>{
 				//	private int projectID;
 				//	private String descriptionOfProject;
 				//	private double projectCost;
-				projectList.add(new Project(allProjects.getString(2), 
+				Project obtainedProj  =  new Project(allProjects.getString(2), 
 						allProjects.getInt(1), 
 						allProjects.getString(3),
-						allProjects.getDouble(4),
-						allProjects.getDouble(5)
-						));
+						allProjects.getDouble(4));
+				obtainedProj.setAmountDonated(allProjects.getDouble(5));				
+				projectList.add(obtainedProj);
 		
 			}
 			return projectList;
@@ -134,6 +127,43 @@ public class ProjectDao implements DAO<Project>{
 		return numRows;
 	}
 	
+	//   (JOIN DONORS, DONATIONS) JOINS PROJECTS  
+	//  donor,email, 
+	//JOIN DONORS, PROJECT, DONATIONS
+	//returns a array of key values pairs with variable type
+	public ArrayList<Map<String, Object>> getDonationsForProject(int projectID){
+		ArrayList<Map<String, Object>> donationProjectResult = new ArrayList<Map<String, Object>>();
+		try{	
+			//JOINS THE PROJECT WITH THE DONATIONS TABLE
+			String sqlCall = "SELECT * FROM DONATIONS D INNER JOIN PROJECTS P ON P.PROJECT_ID= D.PROJECT_ID INNER JOIN DONORS DON ON DON.DONOR_ID =  D.DONOR_ID WHERE P.PROJECT_ID=?";
+			PreparedStatement preparedStatment =  this.con.prepareStatement(sqlCall);
+			preparedStatment.setInt(1, projectID);
+			ResultSet donorsDonationSet =  preparedStatment.executeQuery();
+			Map<String, Object> donationProjectData = new HashMap<String,Object>();
+			while(donorsDonationSet.next()){
+				donationProjectData = new HashMap<String, Object>();		 
+				//MORE ELEMENTS CAN BE ADDED HERE
+				donationProjectData.put("DONATION_ID", donorsDonationSet.getInt("DONATION_ID"));
+				donationProjectData.put("DONATION_AMOUNT", donorsDonationSet.getInt("DONATION_AMOUNT"));
+				donationProjectData.put("DONOR_ID", donorsDonationSet.getInt("DONOR_ID"));
+				donationProjectData.put("DONOR_NAME", donorsDonationSet.getString("DONOR_NAME"));
+				donationProjectData.put("DONOR_EMAIL", donorsDonationSet.getString("DONOR_EMAIL"));
+				donationProjectData.put("DONATION_DATE", donorsDonationSet.getDate("DONATION_DATE"));
+				donationProjectResult.add(donationProjectData);			
+			}
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return donationProjectResult;
+	}
+	
+	
+	
+	//projectID 
+	//get all the donations for projectID
+	//THIS NEED TO BE CHANGED AND IS NOT USED
+	//THIS SHOULD UPDATE THE PROJECT  
 	public int update(int projID, double donationAmount){
 		Project proj = find(projID);
 		double amountDonated = proj.getAmountDonated() + donationAmount;
@@ -151,7 +181,6 @@ public class ProjectDao implements DAO<Project>{
 			e.printStackTrace();
 		}
 		return numRows;		
-
 	}
 
 
