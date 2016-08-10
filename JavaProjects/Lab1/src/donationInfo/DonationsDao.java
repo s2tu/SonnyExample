@@ -1,28 +1,17 @@
 package donationInfo;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.sql.Array;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 import java.sql.Date;
-import java.util.Properties;
-
 import daoUtils.DAO;
 import daoUtils.MySQLConnection;
 import oracle.jdbc.driver.OracleTypes;
-import projectInfo.Project;
+
 
 public class DonationsDao implements DAO<Donation>{
 	protected Connection con;

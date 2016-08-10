@@ -1,0 +1,4 @@
+creditCard - > implements clonable 
+cardCache - > with two methods getProduct(), CachedCard()
+PrototypeClient - >  uses cardchange method retaining the original
+

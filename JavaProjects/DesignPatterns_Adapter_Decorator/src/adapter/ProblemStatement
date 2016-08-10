@@ -1,0 +1,9 @@
+Adapter
+
+BankAccount (I) -> Calculate
+
+SavingsAccount impl BankAccount calculate() - Return due to the bank
+CreditCard calculateMinimumAmountDue() - Return the minimum due
+AccountAdapter extends BankAccount has credit card instance - calculates method returns total of both
+
+Adapter Client = Stuff

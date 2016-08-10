@@ -1,0 +1,3 @@
+Insurance(Abstract) - > LifeInsureance HealthInsure VehicleInsurance
+
+Factory(Interface with getInstance) ->getInstance() method->  InsuranceFactory 
