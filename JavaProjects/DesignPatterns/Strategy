@@ -1,0 +1,10 @@
+Strategy Pattern
+
+PaymentStrategy (I) - >  public void pay(double amount);
+
+2 Implementations -> Cash and CreditCard
+
+1 Context : Patient hold with a setter Method for Strategy 
+
+
+
