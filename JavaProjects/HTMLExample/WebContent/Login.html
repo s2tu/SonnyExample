@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Login Page</title>
+		<link href="css/Style.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			#bluecolor{
+				color:blue;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<form action="">
+		
+		<table>
+			<tr>
+				<td id="bluecolor">Name</td>
+				<td>
+					<input type="text"  name="donorName" placeholder="Name as Registered" required>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="mail"  >Email</label>
+				</td>
+				<td>
+					<input id="mail" type="email" required placeholder="Registered E-Mail">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="handPhone">Hand Phone</label>
+				</td>
+				<td>
+					<!--  this is for 10 digits  -->
+					<input id="handPhone" type="tel" required placeholder="Registered Phone Number" pattern={\d{10}}>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="reset" value="clear">
+				</td>
+				<td>
+					<input type="image" src="images/submit.png" width="50" height="50">
+				</td>
+			</tr>			
+		</table>
+		</form>
+		<!-- name field placeholder requires,  email required field, telephpone, submit button -->
+	</body>
+</html>

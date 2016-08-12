@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+		<link href="css/Style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<!--  
+		form
+		dropdown with list of projects
+		text field to enter donation amount for the project
+		text field to enter donation for protal
+		output field which deiaplys the total 
+		submit button-->	
+		<!--  oninput allows you to have a listener for the input value. The names are mentioned as ids -->
+		<form action="" >
+			<table>
+				<tr><td>List of Projects</td>
+					<td>
+						<select required>
+							<option selected>Project1</option>
+							<option>Project2</option>
+							<option>Project3</option>
+							<option>Project4</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					 	<label for="donationProject">Enter Donation for the Project</label>
+					</td>
+					<td>
+						<input  id="donationProject"  type='number' value=0 required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="donationPortal">Enter Donation to the Portal</label>
+					</td>
+					<td>
+						<input id="donationPortal" type='number' min='50' max='500' step="50" value=50 placeholder="Donation Amount" oninput="total.value=parseInt(donationProject.value) + parseInt(donationPortal.value)" required>
+					</td>
+				</tr>
+			    <tr>
+				    <td>Output</td>
+				    <td>
+				   		<input name='total'  id='total' type=number" placeholder=0 readonly>
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+				    	<input type="reset" value="Clear">
+				    </td>
+				    <td>
+				   		<input type="image"  width="100" height="50" src="images/submit.png">
+				    </td>
+			    </tr>						
+			</table>
+		</form>
+	</body>
+</html>
