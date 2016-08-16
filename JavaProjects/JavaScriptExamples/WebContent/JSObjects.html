@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//ceate three arrays:   model, description, color
+	//iterate throughb the array and print the detauls using writeln methods
+	
+	var model = ['Lcd', 'AC'];
+	var desc = ['images/tv.jpg', 'images/ac.jpg'];
+	var colors = ['red', 'blue'];
+	var output = "";
+	var test = new Object();
+	test.test = "test";
+	console.log(test.test)
+	function display(){
+		
+		for(i in model){
+			var element = document.getElementsByTagName("img")[i];
+			console.log(element);
+			element.setAttribute('src', desc[i]);
+			var element2 = document.getElementsByTagName("h2")[i];
+			element2.innerHTML = model[i];
+			var style = element.getAttribute('style');
+			console.log(style);
+			style= style + ";border: 2px solid " + colors[i];
+			element.setAttribute('style', style);
+		}
+	}
+
+	
+	
+	
+</script>
+</head>
+<body>
+	<h2></h2>
+	<img src="" alt="test1" style="width:100px;height:100px">
+	<h2></h2>
+	<img src="" alt="test2" style="width:100px;height:100px">
+	<script>display();</script>
+</body>
+</html>

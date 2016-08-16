@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- when function is not declared the body has not been loaded  -->
+<script type="text/javascript">
+	function readData(){
+		var element = document.getElementById("userName");
+		var value = element.value;
+		
+		console.log(value);
+		if(value ==="Remesh"){
+			var msgElement =  document.getElementById('msg1');
+			msgElement.innerHTML = "<b style='color:green'> Hi Remesh! </b>";
+		}else{
+			var msgElement =  document.getElementById('msg1');
+			msgElement.innerHTML = "<b style='color:red'>You are not Remesh!!!!</b>";			
+		}
+	}
+</script>
+
+<style type="text/css">
+	img{
+		height:100px;
+		width:100px;
+		border: 2px solid blue;
+	}
+</style>
+</head>
+<body>
+	<form action="https://www.google.co.in/?gfe_rd=cr&ei=-7SyV_vALuTH8gfOuYGgDg">
+		<label>Username:</label>
+		<!--  when you leave focus then the readData is called -->
+		<input type="text" name="userName" id="userName" value="test" onblur="readData()">
+		<br>
+		<label>Password:</label>
+		<input type="password" name="passWord" id="passWord">
+		<br>
+		<input type="button" value="read" onClick="">
+		<br>
+		<span id="msg1">This is a span</span>
+		
+		<img src="images/mushroom.ico" name="pict" onmouseover="document.pict.src='images/submit.png'"
+			onmouseout="document.pict.src='images/mushroom.ico'"> 
+			
+			
+		<button>test</button>
+			
+	</form>
+</body>
+</html>
