@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Using Core Ajax</title>
+		<script type="text/javascript" src="Scripts/jquery.js"></script>
+		<script type="text/javascript">
+
+			var userCode;
+			var targetElement;
+			 
+			function getData(){
+				userCode = $("#code").val();	
+				$.ajax({
+					type:"GET",
+					dataType:"json",
+					url:"http://jsonplaceholder.typicode.com/users/" + escape(userCode),
+		
+					error:function(xhr, textStatus, errorThrown){
+						alert("Error");
+					},
+					success:function(data, textStatus){
+						$("#name").val(data.name);
+					}				
+					});
+			}
+		
+		
+			
+		</script>
+	</head>
+		<body>
+			<section>			
+				<form action="">
+					<fieldset>
+						<legend>Core Ajax Example</legend>
+					
+						<div>
+							<label>User Code</label>
+							<input type="text" name="code" id="code" onblur="getData()">
+						</div>
+						<div>
+							<label>Username</label>
+							<input type="text" name='name' id="name">
+						</div>
+						<div>
+							<input type="submit" value="Submit">
+						</div>
+					</fieldset>
+			
+				</form>
+			</section>
+		</body>
+</html>

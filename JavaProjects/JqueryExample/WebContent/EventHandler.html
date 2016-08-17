@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Event Handler</title>
+<script type="text/javascript" src="Scripts/jquery.js"></script>
+<script type="text/javascript">
+
+
+	$(function(){
+		$("#btn1").click(function(){
+			var row = $("<tr><td>Ankit</td><td>Nothing</td></tr>");
+			$("table").append(row);
+		});
+	});
+	$(document).on("mouseover","table tr" ,function(){$(this).addClass("style1");
+	}).on("mouseout","table tr",function(){
+		$(this).removeClass("style1");
+	});
+	
+	
+	
+</script>
+<style type="text/css">
+	table{
+		border: 2px solid black;
+		border-collapse: collapse;
+		margin-left: auto;
+		margin-right:auto;
+	}
+	tr,td{
+		border: 2px solid black;
+	}
+	.style1{
+		background-color:fuchsia;
+	}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>Skill</td>
+		</tr>
+		<tr>
+			<td>Abhinav Kaul</td>
+			<td>Java PHP</td>
+		</tr>
+		<tr>
+			<td>blah1</td>
+			<td>Java</td>
+		</tr>
+		<tr>
+			<td>Shorab</td>
+			<td>PRO</td>
+		</tr>			
+	</table>
+	<div style="text-align:center">
+		<button id="btn1">Add</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Using Core Ajax</title>
+		<script type="text/javascript">
+			var req = new XMLHttpRequest();
+			var userCode;
+			var targetElement;
+			function getData(){
+				userCode =  document.getElementById("code");
+				targetElement = document.getElementById("name");
+				console.log("UserCode:"  +  userCode.value);		
+				var queryString = "http://jsonplaceholder.typicode.com/users/" + escape(userCode.value);
+				req.open('GET', queryString, true);
+				req.onreadystatechange = processRequest;
+				console.log("Get Data completed");
+				req.send(null);
+				
+				//you could also put the process request content here
+			}
+			function processRequest(){
+				console.log(req.status);
+				console.log(req.readyState);
+				if(req.status == 200 && req.readyState==4){
+					var data = req.responseText;
+					var jsonobj = JSON.parse(data);		
+					targetElement.value =  jsonobj.name;
+					console.log("TargetElement Value:" + targetElement.value);
+				}else{
+					console.log("Error");
+				}
+			}
+		
+			
+		</script>
+	</head>
+		<body>
+			<section>			
+				<form action="">
+					<fieldset>
+						<legend>Core Ajax Example</legend>
+					
+						<div>
+							<label>User Code</label>
+							<input type="text" name="code" id="code" onblur="getData()">
+						</div>
+						<div>
+							<label>Username</label>
+							<input type="text" name='name' id="name">
+						</div>
+						<div>
+							<input type="submit" value="Submit">
+						</div>
+					</fieldset>
+			
+				</form>
+			</section>
+		</body>
+</html>

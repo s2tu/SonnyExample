@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="Scripts/angular.js"></script>
+		<script type="text/javascript">
+			var app=  angular.module("quickstart",[]);
+		</script>
+	</head>
+	<body>
+		<div data-ng-app="">
+		<div style="text-align:center">{{"Angular" + "Application"}}</div>
+			<label>Username:</label>
+			<input type="text" name="username" id="username" data-ng-model="userName">
+			<p data-ng-bind="userName"></p>
+		</div>
+	</body>
+</html>

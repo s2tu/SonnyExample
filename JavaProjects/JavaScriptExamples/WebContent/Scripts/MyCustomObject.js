@@ -17,7 +17,7 @@ function product(){
 		return this.name + ":" + this.price;
 	};
 }
-//custom object type 2 using the function
+//custom object type 2 using the constructor
 function salesman(name1, age2){
 	this.name = name1;
 	this.age = age2;
