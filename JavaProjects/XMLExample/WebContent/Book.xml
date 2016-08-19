@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<bookNumber>1</bookNumber>
+		<bookName>The Book</bookName>
+		<price currency="INR">50.0</price>
+	</book>
+	<book>
+		<bookNumber>2</bookNumber>
+		<bookName>Testing Book</bookName>
+		<price currency="USD">60.0</price>
+	</book>
+</books>

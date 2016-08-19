@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Two Way Binding</title>
+		<script type = "text/javascript" src = Scripts/angular.js></script>
+		
+		<script type = "text/javascript">
+			//doesn't have any dependencies so leave [] blank
+			//the [] is used to specify other modules so that a particular module can have access to other modules
+			
+			var app = angular.module("twoWay",[]);
+			
+			app.controller("ConverterController", function($scope){
+				$scope.data = {inr: 0, convRate: 65.0, usd: 0};				
+				$scope.convert = function(){					
+					$scope.result = $scope.data.inr * $scope.data.convRate;
+				}
+			});
+			app.controller("testController", function($scope){
+				$scope.test = "helloworld";				
+	
+			});			
+
+		</script>
+	</head>
+	<body>
+		<div data-ng-app = "twoWay" data-ng-controller = "ConverterController">		
+			<form>
+				<div>
+				
+					<label data-ng-controller="testController">Indian Rupees {{test}}  {{data.inr}}</label>
+					<input type = "text" name = "inr" data-ng-model = "data.inr" data-ng-change = "convert()">
+				</div>
+				<div>
+					<label>Conversion Rate</label>
+					<input type = "text" name = "convRate" value = "{{data.convRate}}" readonly = "readonly">
+				</div>
+				<div>
+					<label>USD</label>
+					{{result}}
+				</div>
+			</form>		
+		</div>
+	</body>
+</html>

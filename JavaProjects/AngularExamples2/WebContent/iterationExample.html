@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Using NG Repeat and Filters</title>
+		<script type="text/javascript" src = "Scripts/angular.js"> </script>
+		<script type="text/javascript" src = "Scripts/MyApplication.js"></script>
+		<style type="text/css">
+			#projectDetails{
+				border: 2px solid blue;
+				margin-left: auto;
+				margin-right: auto;
+				border-collapse: collapse;
+			}
+			
+			#projectDetails tr, #projectDetails td, #projectDetails th{
+				border: 2px solid blue;			
+			}
+			
+			#inputData{
+				margin-left: auto;
+				margin-right: auto;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div data-ng-app = "iteration" data-ng-controller = "projectController">
+		<h1 style = "text-align: center; color: red">Project Details</h1>
+			<div style = "text-align: center">
+				<label>Search</label>
+				<input type = "search" name = "srchCond" data-ng-model = "srchCond">
+			</div>
+			<br>
+			<table id="projectDetails">
+				<tr>
+					<th>Project Code</th>
+					<th>Description</th>
+					<th>Cost: INR</th>
+				</tr>
+				
+				<tr data-ng-repeat = "project in projectDetails | filter: srchCond | orderBy: '-cost'">
+				<!-- -cost means descending order, without - is ascending order -->
+					<td>{{project.projCode}}</td>					
+					<td>{{project.description | uppercase}}</td>
+					<!-- uppercase is a built in filter -->
+					<td>{{project.cost | currency:'INR. '}}</td>
+				</tr>			
+			</table>
+			<form>				
+				<table id="inputData">					
+					<tr>
+						<td><label>projCode</label></td>
+						<td><input type = "text" id = "projCode"></td>
+					</tr>
+					<tr>
+						<td><label>description</label></td>
+						<td><input type = "text" id = "desc"></td>
+					</tr>
+					<tr>
+						<td><label>cost</label></td>
+						<td><input type = "text" id = "cost"></td>
+					</tr>
+					
+				</table>
+				<div style = "text-align: center"><button id="btn1" data-ng-click = "clicker()">Add</button></div>				
+			</form>
+		</div>
+	</body>
+</html>
