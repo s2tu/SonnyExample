@@ -24,12 +24,12 @@ public class DonorManager implements Manager<Donor>{
 
 	
 	protected DonorDao donorDao;
-	protected DonationsDao donationDoa;
+	//protected DonationsDao donationDoa;
 
 	
 	public DonorManager(){
 		this.donorDao = new DonorDao();
-		this.donationDoa = new DonationsDao();
+		//this.donationDoa = new DonationsDao();
 	}
 	
 
@@ -54,6 +54,7 @@ public class DonorManager implements Manager<Donor>{
 	//projectID 
 	//amount
 	//then uses the donationsDAO to do the 
+	/*
 	public int makeDonation(int donationID, int donorID, int projectID, double amount){
 		int result = donationDoa.add(new Donation(donationID, projectID, donorID, amount, new Date()));
 		if(result == 0){
@@ -61,7 +62,7 @@ public class DonorManager implements Manager<Donor>{
 		}
 		
 		return result;
-	}
+	}*/
 
 	@Override
 	public int removeitem(int donorID) {

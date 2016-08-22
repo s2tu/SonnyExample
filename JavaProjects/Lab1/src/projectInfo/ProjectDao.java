@@ -109,7 +109,7 @@ public class ProjectDao implements DAO<Project>{
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		int numRows = 0;
+		int numRows = 1;
 		try {
 			String sqlCall = "{ call removeProject(?,?) }";
 			CallableStatement st = con.prepareCall(sqlCall);			

@@ -79,13 +79,14 @@ public class DonationsDao implements DAO<Donation>{
 
 	@Override
 	public int delete(int donationID) {
-		String sqlCall = "{ call deleteDonation(? ?) }";
-		int numRows = 0;
+		String sqlCall = "{ call deleteDonation(?,?) }";
+		int numRows = 1;
 		try{
 			CallableStatement callablestatement = this.con.prepareCall(sqlCall);
 			callablestatement.setInt(1, donationID);
 			callablestatement.registerOutParameter(2, java.sql.Types.NUMERIC);
 			callablestatement.execute();
+			
 			numRows = callablestatement.getInt(2);
 		}catch(Exception e){
 			

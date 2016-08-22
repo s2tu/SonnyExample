@@ -31,7 +31,7 @@ public Donation(int donationID, int projectID, int donorID,  double amount, Date
 	this.projectID = projectID;
 	this.amount = amount;
 	this.donorID = donorID;
-	this.setDateOfDonation(dateOfDonation);
+	this.dateOfDonation = dateOfDonation;
 }
 /**
  * @param productId the productId to set

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Form Selector Example</title>
+		<link href="css/style.css" rel="stylesheet">
+		<script src="scripts/jquery.js"></script>
+		<script src="scripts/main.js"></script>		
+	</head>
+	<body>
+		<h1 id="title">Form Selector</h1>
+		
+		<aside id="side">
+		
+			<label id="selectedValueLbl" for="selectedValue">Selected Value</label>
+			<input id="selectedValue" type="text" readonly>
+			
+			<table id="sideButtonTable" border=1>
+				<tr><td><button id="readText">Read Text</button></td></tr>
+				<tr><td><button id="readSelect">Read Select</button></td></tr>
+				<tr><td><button id="readRadio">Read Radio</button></td></tr>
+				<tr><td><button id="readCheckBox">Read Check Box</button></td></tr>
+				<tr><td><button id="readUnchecked">Read Unchecked Radio</button></td></tr>
+			</table>
+		</aside>
+		
+		<div id="content">
+			<div id="imageBlock">
+				<img class="htmlImages" src="images/html2.png">
+				<img class="htmlImages" src="images/html2.png">
+				<img class="htmlImages" src="images/html3.png">
+			</div>
+			
+			<fieldset id="newUserFS">
+				<legend>New User</legend>
+				<form>
+					<table>
+						<tr><td>
+							<label for="username">Username:</label>
+							<input type="text" id="username" name="username">
+						</td></tr>
+						
+						<tr><td>
+							<label for="password">Password:</label>
+							<input type="password" id="password" name="password">
+						</td></tr>
+						
+						<tr><td>
+							<label>Skills:</label>
+							<label for="skillsJava">Java</label>
+							<input class="skillsckb" type="checkbox" id="skillsJava" name="skillsJava">				
+						
+							<label for="dotNet">Dot NET</label>
+							<input class="skillsckb" type="checkbox" id="dotNet" name="dotNet">
+							</td></tr>
+						<tr><td>
+								<label for="cities">
+									Cities:
+								</label>
+								<select id="cities">
+									<option value="">Select City</option>
+									<option value="Hamilton">Hamilton</option>
+									<option value="Toronto">Toronto</option>
+									<option value="Waterloo">Waterloo</option>			
+								</select>
+						</td></tr>
+						<tr><td>
+							<label >Agree to Terms:</label>
+							<label for="agree" >Yes</label>
+							<input class="radioTerms" id="agree" type="radio" >
+							<label  for="disagree" >No</label>
+							<input  class="radioTerms" id="disagree" type="radio">		
+						</td><tr>
+					</table>
+				</form>
+			</fieldset>			
+		</div>	
+	</body>
+	<footer>
+		<p id="footerText">Show Core Examples</p>
+	</footer>
+</html>

@@ -74,7 +74,7 @@ public class DonorDao implements DAO<Donor>{
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		int numRows = 0;
+		int numRows = 1;
 		try {
 			String sqlCall = "{ call deleteDonor(?,?) }";
 			CallableStatement st = con.prepareCall(sqlCall);			
@@ -111,8 +111,7 @@ public class DonorDao implements DAO<Donor>{
 		ArrayList<Map<String, Object>> donationProjectResult = new ArrayList<Map<String, Object>>();
 		try{	
 			//JOINS THE PROJECT WITH THE DONATIONS TABLE
-			String sqlCall = "SELECT * FROM " + this.tableName +  " INNER JOIN PROJECTS ON DONATIONS.PROJECT_ID = PROJECTS.PROJECT_ID"
-		    + " WHERE DONOR_ID=?";
+			String sqlCall="SELECT * FROM DONATIONS INNER JOIN PROJECTS ON DONATIONS.PROJECT_ID = PROJECTS.PROJECT_ID WHERE DONOR_ID=?";
 			PreparedStatement preparedStatment =  this.con.prepareStatement(sqlCall);
 			preparedStatment.setInt(1, donorID);
 			ResultSet donorsDonationSet =  preparedStatment.executeQuery();

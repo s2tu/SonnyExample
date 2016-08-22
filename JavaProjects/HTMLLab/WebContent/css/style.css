@@ -1,0 +1,51 @@
+@CHARSET "ISO-8859-1";
+
+
+#title{
+	background-color:orange;
+	text-align:center;
+	margin:0;
+}
+
+#side{
+	float:left;
+	width:30%;
+	background-color:yellow;
+	min-height:500px;
+}
+
+#content{
+	float:left;
+	min-height:500px;
+	width:70%;
+	background-color:silver;
+}
+
+#selectedValueLbl{
+	font-style: italic;
+}
+
+
+#sideButtonTable{
+	margin-top:5em;
+}
+#imageBlock{
+	text-align:center;
+}
+.htmlImages{
+	width:120px;
+	height:100px;
+	display:inline;	
+	
+}
+
+#newUserFS{
+	width:500px;
+}
+
+
+footer{
+	width:100%;
+	background-color:orange;
+	text-align:center;
+}
