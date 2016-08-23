@@ -125,7 +125,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="AjaxExample" path="/AjaxExample" reloadable="true" source="org.eclipse.jst.jee.server:AjaxExample"/><Context docBase="JqueryExample" path="/JqueryExample" reloadable="true" source="org.eclipse.jst.jee.server:JqueryExample"/><Context docBase="AngularExamples2" path="/AngularExamples2" reloadable="true" source="org.eclipse.jst.jee.server:AngularExamples2"/><Context docBase="AngularTwoWayBind" path="/AngularTwoWayBind" reloadable="true" source="org.eclipse.jst.jee.server:AngularTwoWayBind"/><Context docBase="HTMLLab" path="/HTMLLab" reloadable="true" source="org.eclipse.jst.jee.server:HTMLLab"/></Host>
+      <Context docBase="AjaxExample" path="/AjaxExample" reloadable="true" source="org.eclipse.jst.jee.server:AjaxExample"/><Context docBase="JqueryExample" path="/JqueryExample" reloadable="true" source="org.eclipse.jst.jee.server:JqueryExample"/><Context docBase="AngularExamples2" path="/AngularExamples2" reloadable="true" source="org.eclipse.jst.jee.server:AngularExamples2"/><Context docBase="AngularTwoWayBind" path="/AngularTwoWayBind" reloadable="true" source="org.eclipse.jst.jee.server:AngularTwoWayBind"/><Context docBase="HTMLLab" path="/HTMLLab" reloadable="true" source="org.eclipse.jst.jee.server:HTMLLab"/><Context docBase="ServletExample" path="/ServletExample" reloadable="true" source="org.eclipse.jst.jee.server:ServletExample"/></Host>
     </Engine>
   </Service>
 </Server>

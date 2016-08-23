@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>This is Ajax with Servlet	</title>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/getHTMLAjax.js"></script>
+</head>
+<body>
+	<datalist id="options">
+		<option>123456789</option>
+		<option>223456789</option>
+		<option>323456789</option>
+		<option>423456789</option>
+	</datalist>
+	<form id="submitform" action="FindDueServlet" method="get">
+		<label for="email">Email:</label>
+		<input type="email" name="email" id="email" required>
+		<label for="number">Number:</label>
+		<input name="number" id="number" list="options" required>
+		<input id="output" type="number" readonly>
+		<button id="submitbtn">Submit</button>
+	</form>
+	
+	<div id="content"></div>
+</body>
+</html>
