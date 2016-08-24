@@ -1,0 +1,11 @@
+Create a Java Class - PaymentStatus
+The Class Will have following Properties
+transactionId,transactionDate,description,amount
+Create a Java Class StatusFinder
+Initialize a Collection of phoneNumber and Paymentstatus
+Create a Method getPaymentHistory
+Let the method return the PaymentStatus
+Invoke it from Servlet
+Stored the returned collection in request Scope
+Handle it in a Jsp Page
+Create a HTML Page and take the Phone Number as input
