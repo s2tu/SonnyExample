@@ -9,7 +9,8 @@ public class MySQLConnection {
 		Connection con = null;
 		try{
 			Properties props = new Properties();
-			FileInputStream inStream = new FileInputStream(new File("DbConnections.properties"));
+			InputStream inStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("DbConnections.properties");
+			//FileInputStream inStream = new FileInputStream(new File("DbConnections.properties"));
 			props.load(inStream);
 			Class.forName(props.getProperty("db.driverClass"));
 			con = DriverManager.getConnection(props.getProperty("db.driverURL"),
@@ -19,6 +20,10 @@ public class MySQLConnection {
 			e.printStackTrace();
 		}
 		return con;
+	}
+	
+	public static void main(String args[]){
+		System.out.println(getMyoracleConnection());
 	}
 	
 }

@@ -19,4 +19,34 @@
     <servlet-name>ValidatorServlet</servlet-name>
     <url-pattern>/ValidatorServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionManager</display-name>
+    <servlet-name>SessionManager</servlet-name>
+    <servlet-class>com.training.servlet.SessionManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionManager</servlet-name>
+    <url-pattern>/SessionManager</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoadNames</display-name>
+    <servlet-name>LoadNames</servlet-name>
+    <servlet-class>come.training.servlet.LoadNames</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoadNames</servlet-name>
+    <url-pattern>/LoadNames</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoadingNames</display-name>
+    <servlet-name>LoadingNames</servlet-name>
+    <servlet-class>com.training.servlet.LoadingNames</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoadingNames</servlet-name>
+    <url-pattern>/LoadingNames</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,0 +1,15 @@
+Student: Id, Name, Mark
+
+TopRankers class- List<Student> findTopRankers(dept)
+
+PrinterTopRankers jsp page: Creating using JSTL Tags Prints the names in descending order of Mark
+
+
+ID Name Mark Rating
+101 Ramesh 99 *****
+
+if Mark is > 90 5 star rating
+>65 and <90 4 star rating
+>55 < 65 3 star rating
+>40 < 55 2 star rating 
+<40 1 start rating
