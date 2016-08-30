@@ -1,0 +1,54 @@
+@CHARSET "ISO-8859-1";
+
+
+html,body{
+	height:100%;
+	margin:0;
+}
+
+.titleDiv{
+	margin-top:2em;
+	margin-bottom:2em;
+	font-weight:bold;
+	font-size:18px;
+}
+.navigation{
+	padding-left:2em;
+	background-color:rgb(230,136,185);
+}
+
+.navigationItems{
+	color:rgb(135,64,154);
+	margin-left:15px;
+	font-family:cursive;
+	font-size: 18pt;
+}
+
+.content{
+	float:left;
+	height:80%;
+}
+
+.loginTable{
+	text-align:left;
+	margin: 0 auto;
+	border: 1px solid blue;
+	border-collapse: collapse;
+}
+#sideBar{
+	width:30%;
+	background-color:rgb(255,167,79);
+	text-align:center;
+}
+
+#main{
+	width:70%;
+	min-height:500px;
+	background-color:blue;
+	background-color:rgb(255,128,0);
+	
+}
+
+#registerForm{
+	display:none;
+}
