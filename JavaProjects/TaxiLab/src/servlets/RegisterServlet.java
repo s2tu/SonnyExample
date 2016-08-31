@@ -44,9 +44,9 @@ public class RegisterServlet extends HttpServlet {
 		 TaxiService tservice = new TaxiService();
 		 int  output = tservice.addTaxiUser(new TaxiUser(name, email, password, phonenumber, city));
 		 if(output == 0){
-			 request.setAttribute("RegisterError", "Your email already exists."); 
+			 request.setAttribute("Error", "Your email already exists."); 
 		 }else{
-			 request.setAttribute("Registered", "Thank you for registering " + email); 
+			 request.setAttribute("Status", "Thank you for registering " + email); 
 		 }
 	
 		 

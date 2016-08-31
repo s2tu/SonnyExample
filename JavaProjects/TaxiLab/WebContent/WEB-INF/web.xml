@@ -49,4 +49,14 @@
     <servlet-name>BookingServlet</servlet-name>
     <url-pattern>/BookingServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OccupyTaxiServlet</display-name>
+    <servlet-name>OccupyTaxiServlet</servlet-name>
+    <servlet-class>servlets.OccupyTaxiServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OccupyTaxiServlet</servlet-name>
+    <url-pattern>/OccupyTaxiServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

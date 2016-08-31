@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import domains.TaxiUser;
 import managers.TaxiService;
@@ -41,6 +42,8 @@ public class LoginServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String city = request.getParameter("city");
+		HttpSession session = request.getSession();
+		
 		TaxiService tservice = new TaxiService();
 		//The phonenumber/name is not required for validation
 		TaxiUser validateUser = new TaxiUser("",email, password, 0, city);
@@ -50,9 +53,9 @@ public class LoginServlet extends HttpServlet {
 		String relocation = "";
 		if(isValid){
 			relocation = "booking.jsp";
-			request.setAttribute("userData", tservice.getUser(email));
+			session.setAttribute("userData", tservice.getUser(email));
 		}else{
-			request.setAttribute("Error","Error Msg. Login Failed.");
+			request.setAttribute("Error","Login Failed.  Check Values and Try Again.");
 			relocation = "index.jsp";
 		}
 		

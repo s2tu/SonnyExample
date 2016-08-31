@@ -5,20 +5,19 @@
 		<title>Login</title>
 		<jsp:include page="includes.jsp"></jsp:include>
 		<script src="js/loginregister.js"></script>
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	</head>
 	<body>
 		<div class="titleDiv"> Sonny's Taxi Company</div>
 		
-		<!--  c:out  value="${parameter}"  replace these with JSTL later-->
-		<%if(request.getAttribute("Error")!=null){%>
-			<h1 style="color:red">Login Failed.  Check Values and Try Again.</h1>
-		<%}%>
-		<%if(request.getAttribute("Registered")!=null){%>
-			<h1 style="color:green"><%= request.getAttribute("Registered") %></h1>
-		<%}%>
-		<%if(request.getAttribute("RegisterError")!=null){%>
-			<h1 style="color:red"><%= request.getAttribute("RegisterError") %></h1>
-		<%}%>				
+		<div style="color:red">
+			<h1><c:out value="${Error}"></c:out></h1>
+		</div>
+		<div style="color:green">
+			<h1><c:out value="${Status}"></c:out></h1>
+		</div>		
+
+			
 		<jsp:include page="navigationMain.jsp"></jsp:include>
 		<aside id="sideBar" class="content">
 			<form id="loginForm" method="post" action="LoginServlet">

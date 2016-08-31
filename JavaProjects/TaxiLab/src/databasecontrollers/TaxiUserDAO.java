@@ -49,7 +49,8 @@ public class TaxiUserDAO implements DAO<TaxiUser> {
 	}
 
 	@Override
-	public void update(TaxiUser item) {
+	public int update(TaxiUser item) {
+		return 0;
 		// TODO Auto-generated method stub
 	}
 
