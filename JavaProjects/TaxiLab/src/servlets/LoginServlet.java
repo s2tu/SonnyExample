@@ -42,14 +42,15 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String city = request.getParameter("city");
 		TaxiService tservice = new TaxiService();
-		//The phonenumber is not required for validation
-		TaxiUser validateUser = new TaxiUser(email, password, 0, city);
+		//The phonenumber/name is not required for validation
+		TaxiUser validateUser = new TaxiUser("",email, password, 0, city);
 		boolean isValid  = tservice.validate(validateUser);
 		request.setAttribute("isValid",isValid);
 		
 		String relocation = "";
 		if(isValid){
 			relocation = "booking.jsp";
+			request.setAttribute("userData", tservice.getUser(email));
 		}else{
 			request.setAttribute("Error","Error Msg. Login Failed.");
 			relocation = "index.jsp";

@@ -19,14 +19,14 @@ public class ValidateTaxiUserTest {
 	@Test
 	public void validUser() {//positive test
 		boolean actual = true;
-		boolean output = tservice.validate(new TaxiUser("bob@hotmail.com", "password", 911, "Toronto"));
+		boolean output = tservice.validate(new TaxiUser("bob1","bob@hotmail.com", "password", 911, "Toronto"));
 		assertEquals("validUser Testing:", actual, output);
 	}
 	
 	@Test
 	public void invalidUser() {//negative test
 		boolean actual = false;
-		boolean output = tservice.validate(new TaxiUser("bob@hotmail23.com", "password", 911, "Toronto"));
+		boolean output = tservice.validate(new TaxiUser("bob2","bob@hotmail23.com", "password", 911, "Toronto"));
 		assertEquals("invalidUser Testing:", actual, output);
 	}	
 }

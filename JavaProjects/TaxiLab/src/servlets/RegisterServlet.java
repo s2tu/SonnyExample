@@ -36,12 +36,13 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String email = request.getParameter("email");
+		 String name = request.getParameter("name");
+	     String email = request.getParameter("email");
 		 String password = request.getParameter("password");
 		 long phonenumber = Long.parseLong(request.getParameter("phonenumber"));
 		 String city = request.getParameter("city");
 		 TaxiService tservice = new TaxiService();
-		 int  output = tservice.addTaxiUser(new TaxiUser(email, password, phonenumber, city));
+		 int  output = tservice.addTaxiUser(new TaxiUser(name, email, password, phonenumber, city));
 		 if(output == 0){
 			 request.setAttribute("RegisterError", "Your email already exists."); 
 		 }else{

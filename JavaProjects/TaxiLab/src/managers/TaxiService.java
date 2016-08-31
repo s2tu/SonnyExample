@@ -2,17 +2,19 @@ package managers;
 
 import java.util.logging.Level;
 
-import databasecontrollers.TaxiDAO;
+import databasecontrollers.TaxiUserDAO;
 import domains.TaxiUser;
 import loggers.GlobalLogger;
 
 public class TaxiService {
-	private TaxiDAO taxiManager;
+	private TaxiUserDAO taxiManager;
 	
 	public TaxiService(){
-		this.taxiManager = new TaxiDAO();
+		this.taxiManager = new TaxiUserDAO();
 	}
-	
+	public TaxiUser getUser(String email){
+		return this.taxiManager.get(email);
+	}
 	public int addTaxiUser(TaxiUser user){
 		int output = taxiManager.add(user);
 		if (output == 0){

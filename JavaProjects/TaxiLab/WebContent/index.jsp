@@ -4,9 +4,12 @@
 		<meta charset="ISO-8859-1">
 		<title>Login</title>
 		<jsp:include page="includes.jsp"></jsp:include>
+		<script src="js/loginregister.js"></script>
 	</head>
 	<body>
 		<div class="titleDiv"> Sonny's Taxi Company</div>
+		
+		<!--  c:out  value="${parameter}"  replace these with JSTL later-->
 		<%if(request.getAttribute("Error")!=null){%>
 			<h1 style="color:red">Login Failed.  Check Values and Try Again.</h1>
 		<%}%>
@@ -16,7 +19,7 @@
 		<%if(request.getAttribute("RegisterError")!=null){%>
 			<h1 style="color:red"><%= request.getAttribute("RegisterError") %></h1>
 		<%}%>				
-		<jsp:include page="navigation.jsp"></jsp:include>
+		<jsp:include page="navigationMain.jsp"></jsp:include>
 		<aside id="sideBar" class="content">
 			<form id="loginForm" method="post" action="LoginServlet">
 				<h1>User Login</h1>

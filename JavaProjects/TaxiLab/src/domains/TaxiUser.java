@@ -2,6 +2,7 @@ package domains;
 
 public class TaxiUser {
 	//"EMAIL" VARCHAR2(20),"PASSWORD" VARCHAR2(8),"TELEPHONE" NUMBER(10,0),"CITY" VARCHAR2(20), 
+	private String name;
 	private String email;
 	private String password;
 	private long phonenumber; 
@@ -60,8 +61,9 @@ public class TaxiUser {
 	 * @param phonenumber
 	 * @param city
 	 */
-	public TaxiUser(String email, String password, long phonenumber, String city) {
+	public TaxiUser(String name, String email, String password, long phonenumber, String city) {
 		super();
+		this.setName(name);
 		this.email = email;
 		this.password = password;
 		this.phonenumber = phonenumber;
@@ -79,5 +81,11 @@ public class TaxiUser {
 	public String toString(){
 		return email +"\t" + password + "\t" + phonenumber + "\t" + city;
 		
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 }

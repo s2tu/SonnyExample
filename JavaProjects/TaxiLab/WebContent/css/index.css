@@ -29,7 +29,7 @@ html,body{
 	height:80%;
 }
 
-.loginTable{
+table{
 	text-align:left;
 	margin: 0 auto;
 	border: 1px solid blue;
@@ -51,4 +51,8 @@ html,body{
 
 #registerForm{
 	display:none;
+}
+
+#bookingContent{
+	text-align:center;
 }
