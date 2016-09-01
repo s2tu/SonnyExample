@@ -15,12 +15,12 @@
 		</div>
 		<div style="color:green">
 			<h1><c:out value="${Status}"></c:out></h1>
-		</div>		
-
+		</div>
+				
 			
 		<jsp:include page="navigationMain.jsp"></jsp:include>
 		<aside id="sideBar" class="content">
-			<form id="loginForm" method="post" action="LoginServlet">
+			<form id="loginForm" method="post" action="loginbeanredirect.jsp">
 				<h1>User Login</h1>
 				<table class="loginTable" border=1>
 					<tr><td><label for="email">Email:</label></td><td><input type="text" name="email" id="email" required></td></tr>

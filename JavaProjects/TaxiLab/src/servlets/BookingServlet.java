@@ -45,11 +45,17 @@ public class BookingServlet extends HttpServlet {
 		TaxiService tservice = new TaxiService();
 		if(booknow){
 			//forward to the data to the new page
-			request.setAttribute("cabData", tservice.getAvailableCabs());
+			
+			//add the booking here
+			
+			request.setAttribute("cabData", tservice.getAvailableCabs(request.getParameter("pickup")));
 			relocation = "availability.jsp";
 			
 		}else{
 			if(booklater){
+			
+				//add the booking here
+				
 				//add the entry values into the database
 				request.setAttribute("Status", "Your cab is now booked!");
 				relocation = "index.jsp";

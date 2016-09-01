@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import domains.TaxiUser;
 import managers.TaxiService;
@@ -36,17 +37,21 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String name = request.getParameter("name");
-	     String email = request.getParameter("email");
-		 String password = request.getParameter("password");
-		 long phonenumber = Long.parseLong(request.getParameter("phonenumber"));
-		 String city = request.getParameter("city");
+		
+		 HttpSession session = request.getSession();
+	//	 String name = request.getParameter("name");
+	 //    String email = request.getParameter("email");
+	//	 String password = request.getParameter("password");
+	//	 long phonenumber = Long.parseLong(request.getParameter("phonenumber"));
+	//	 String city = request.getParameter("city");
+		 TaxiUser obtaineduser = (TaxiUser)session.getAttribute("taxiuser");
+		 System.out.println(obtaineduser.toString());
 		 TaxiService tservice = new TaxiService();
-		 int  output = tservice.addTaxiUser(new TaxiUser(name, email, password, phonenumber, city));
+		 int  output = tservice.addTaxiUser(obtaineduser);
 		 if(output == 0){
 			 request.setAttribute("Error", "Your email already exists."); 
 		 }else{
-			 request.setAttribute("Status", "Thank you for registering " + email); 
+			 request.setAttribute("Status", "Thank you for registering " + obtaineduser.getEmail()); 
 		 }
 	
 		 

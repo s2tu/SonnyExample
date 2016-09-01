@@ -1,5 +1,5 @@
 
-<form id="registerForm" action="RegisterServlet" method="POST">
+<form id="registerForm" action="registerbeanredirect.jsp" method="POST">
 	<h1>New User Registeration</h1>
 	<table class="loginTable" border=1>
 		<tr><td><label for="name">Name:</label></td><td><input type="text" name="name" id="name" required></td></tr>	

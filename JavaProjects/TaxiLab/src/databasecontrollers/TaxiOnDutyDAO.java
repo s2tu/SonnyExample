@@ -69,11 +69,12 @@ public class TaxiOnDutyDAO implements DAO<TaxiOnDutyData>{
 		// TODO Auto-generated method stub
 		return null;		
 	}
-	public ArrayList<TaxiOnDutyData> getAll(){
+	public ArrayList<TaxiOnDutyData> getAllLocation(String location){
 		ArrayList<TaxiOnDutyData> outputData = new ArrayList<TaxiOnDutyData>(); 
-		String searchQuery = "select * from TaxiOnDuty where AVAILABILITY='FREE'";
+		String searchQuery = "select * from TaxiOnDuty where CURLOCATION=? AND AVAILABILITY='FREE'";
 		try{
 			PreparedStatement prepareStatement = this.con.prepareStatement(searchQuery);
+			prepareStatement.setString(1, location);
 			ResultSet output = prepareStatement.executeQuery();
 			while(output.next()){
 				TaxiOnDutyData obtainedData = new TaxiOnDutyData(output.getString(1), output.getString(2), output.getString(3), output.getString(3), output.getString(4));

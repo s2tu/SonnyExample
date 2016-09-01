@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import domains.TaxiUser;
+import loggers.GlobalLogger;
 import managers.TaxiService;
 
 /**
@@ -44,6 +46,9 @@ public class LoginServlet extends HttpServlet {
 		String city = request.getParameter("city");
 		HttpSession session = request.getSession();
 		
+		TaxiUser testuser = (TaxiUser)session.getAttribute("taxiuser");
+		System.out.println(testuser.toString());
+		GlobalLogger.infolog.log(Level.INFO, "Login Session: " + session.getId());
 		TaxiService tservice = new TaxiService();
 		//The phonenumber/name is not required for validation
 		TaxiUser validateUser = new TaxiUser("",email, password, 0, city);

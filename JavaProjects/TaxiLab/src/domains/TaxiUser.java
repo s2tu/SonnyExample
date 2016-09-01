@@ -70,6 +70,10 @@ public class TaxiUser {
 		this.city = city;
 	}
 	
+	public TaxiUser(){
+		super();
+	}
+	
 	//later disallow people with same email to avoid duplicate accounts
 	@Override
 	public boolean equals(Object user){

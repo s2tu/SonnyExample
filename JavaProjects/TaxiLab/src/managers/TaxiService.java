@@ -52,8 +52,9 @@ public class TaxiService {
 	
 	//Taxi on Duty Services
 	//this function should return an arraylist of all available cabs
-	public ArrayList<TaxiOnDutyData> getAvailableCabs(){
-		return this.taxiOnGoingManager.getAll();
+	//for a given location
+	public ArrayList<TaxiOnDutyData> getAvailableCabs(String location){
+		return this.taxiOnGoingManager.getAllLocation(location);
 	}
 	public void changeCabAvailablity(String cabNum){
 		

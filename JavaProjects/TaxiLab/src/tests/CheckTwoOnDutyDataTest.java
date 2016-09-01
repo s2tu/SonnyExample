@@ -18,14 +18,15 @@ public class CheckTwoOnDutyDataTest {
 		tservice= new TaxiService();
 	}
 	
+	
 	@Test
-	public void oneDutyData() {//positive test
+	public void obtainDutyData(){//positive test
 		
 		//based on the sql there should be one that is free
-		int actual = 1;
-		ArrayList<TaxiOnDutyData> data =  tservice.getAvailableCabs();
-		int output = data.size();
-		assertEquals("oneDutyData Testing:", actual, output);
+		boolean actual = false;
+		ArrayList<TaxiOnDutyData> data =  tservice.getAvailableCabs("Toronto");
+		boolean output = data.size() != 0;
+		assertEquals("obtainDutyData Testing:", actual, output);
 	}
 	
 }
