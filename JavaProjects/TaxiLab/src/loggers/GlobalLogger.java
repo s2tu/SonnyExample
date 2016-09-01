@@ -1,7 +1,7 @@
 package loggers;
 
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public class GlobalLogger {
-	public static Logger infolog = Logger.getLogger("MyInfoLogger");
+	public static Logger infolog = Logger.getRootLogger();
 }

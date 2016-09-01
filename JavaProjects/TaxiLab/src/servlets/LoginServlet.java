@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 		
 		TaxiUser testuser = (TaxiUser)session.getAttribute("taxiuser");
 		System.out.println(testuser.toString());
-		GlobalLogger.infolog.log(Level.INFO, "Login Session: " + session.getId());
+		GlobalLogger.infolog.info("Login Session: " + session.getId());
 		TaxiService tservice = new TaxiService();
 		//The phonenumber/name is not required for validation
 		TaxiUser validateUser = new TaxiUser("",email, password, 0, city);

@@ -26,26 +26,26 @@ public class TaxiService {
 	public int addTaxiUser(TaxiUser user){
 		int output = taxiManager.add(user);
 		if (output == 0){
-			GlobalLogger.infolog.log(Level.WARNING, "Adding Taxi User failed.");
+			GlobalLogger.infolog.info("Adding Taxi User failed.");
 		}else{
-			GlobalLogger.infolog.log(Level.INFO, "Added member successfully");
+			GlobalLogger.infolog.info("Added member successfully");
 		}
 		return output;
 	}
 	public boolean validate(TaxiUser user){	
 		TaxiUser obtainedDBuser = taxiManager.get(user.getEmail());	
 		if(obtainedDBuser == null){
-			GlobalLogger.infolog.log(Level.WARNING, "User Not Found.");
+			GlobalLogger.infolog.info("User Not Found.");
 			return false;
 		}
 		
-		GlobalLogger.infolog.log(Level.INFO, "Validating The following User");
-		GlobalLogger.infolog.log(Level.INFO, user.toString());
+		GlobalLogger.infolog.info("Validating The following User");
+		GlobalLogger.infolog.info(user.toString());
 		
 		if(obtainedDBuser.equals(user)){
-			GlobalLogger.infolog.log(Level.INFO, "This user is a valid user.  Authentication Success.");
+			GlobalLogger.infolog.info("This user is a valid user.  Authentication Success.");
 		}else{
-			GlobalLogger.infolog.log(Level.INFO, "This user is not a valid user. Authentication Failed.");
+			GlobalLogger.infolog.info("This user is not a valid user. Authentication Failed.");
 		}
 		return obtainedDBuser.equals(user);	
 	}
@@ -69,7 +69,7 @@ public class TaxiService {
 			cabData.setAvailability("FREE");
 		}
 		
-		GlobalLogger.infolog.log(Level.INFO, "Changing the Availability for " + cabNum + " to " + cabData.getAvailability());
+		GlobalLogger.infolog.info("Changing the Availability for " + cabNum + " to " + cabData.getAvailability());
 		taxiOnGoingManager.update(cabData);
 		
 	}

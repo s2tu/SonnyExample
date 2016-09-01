@@ -59,4 +59,7 @@
     <servlet-name>OccupyTaxiServlet</servlet-name>
     <url-pattern>/OccupyTaxiServlet</url-pattern>
   </servlet-mapping>
+  <session-config>
+        <session-timeout>10</session-timeout>
+   </session-config>  
 </web-app>

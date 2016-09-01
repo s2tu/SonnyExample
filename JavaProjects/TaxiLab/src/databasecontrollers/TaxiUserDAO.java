@@ -63,12 +63,12 @@ public class TaxiUserDAO implements DAO<TaxiUser> {
 			ResultSet output = prepareStatement.executeQuery();
 			while(output.next()){
 				TaxiUser obtainedUser = new TaxiUser(output.getString(5), output.getString(1), output.getString(2), output.getLong(3), output.getString(4));
-				GlobalLogger.infolog.log(Level.INFO, "Database Obtained user from " + email);
-				GlobalLogger.infolog.log(Level.INFO, obtainedUser.toString());
+				GlobalLogger.infolog.info("Database Obtained user from " + email);
+				GlobalLogger.infolog.info( obtainedUser.toString());
 				return obtainedUser;
 			}
 		}catch(Exception e){
-			GlobalLogger.infolog.log(Level.WARNING, "Member not found for email: " + email);
+			GlobalLogger.infolog.info( "Member not found for email: " + email);
 			e.printStackTrace();
 		}
 		// TODO Auto-generated method stub

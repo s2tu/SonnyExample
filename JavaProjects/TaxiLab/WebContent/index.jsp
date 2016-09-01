@@ -8,7 +8,7 @@
 		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	</head>
 	<body>
-		<div class="titleDiv"> Sonny's Taxi Company</div>
+		<div class="titleDiv">Sonny's Taxi Company</div>
 		
 		<div style="color:red">
 			<h1><c:out value="${Error}"></c:out></h1>
@@ -25,7 +25,7 @@
 				<table class="loginTable" border=1>
 					<tr><td><label for="email">Email:</label></td><td><input type="text" name="email" id="email" required></td></tr>
 					<tr><td><label for="password">Password:</label></td><td><input type="password" name="password" id="password" required></td></tr>
-								<tr><td><label for="city">City:</label></td><td><select id="city" name="city"><option value="toronto" required>Toronto</option></select></td></tr>
+								<tr><td><label for="city">City:</label></td><td><select id="city" name="city" required><option value="Toronto" >Toronto</option><option value="Waterloo">Waterloo</option></select></td></tr>
 					<tr><td><input type="reset" value="Reset"></td><td><input type="submit" value="Login" required></td></tr>
 				</table>	
 			</form>

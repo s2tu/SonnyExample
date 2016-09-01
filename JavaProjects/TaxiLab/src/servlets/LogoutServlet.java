@@ -33,7 +33,7 @@ public class LogoutServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session = request.getSession();
-		GlobalLogger.infolog.log(Level.INFO, "Invalidating Session: " + session.getId());
+		GlobalLogger.infolog.info("Invalidating Session: " + session.getId());
 		session.invalidate();
 		RequestDispatcher requestdis = request.getRequestDispatcher("index.jsp");
 		request.setAttribute("Status", "You have successfully logged out. ");

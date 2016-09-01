@@ -40,7 +40,7 @@ public class BookingServlet extends HttpServlet {
 		//determine which radio button is not null
 		boolean booklater = request.getParameter("booking").equals("booklater"); 
 		boolean booknow = request.getParameter("booking").equals("booknow"); 
-		GlobalLogger.infolog.log(Level.INFO, "BookLater " + booklater  + " BookNow " + booknow);
+		GlobalLogger.infolog.info("BookLater " + booklater  + " BookNow " + booknow);
 		String relocation = "";
 		TaxiService tservice = new TaxiService();
 		if(booknow){
@@ -54,6 +54,9 @@ public class BookingServlet extends HttpServlet {
 		}else{
 			if(booklater){
 			
+				
+	
+				
 				//add the booking here
 				
 				//add the entry values into the database

@@ -42,7 +42,7 @@ public class TaxiOnDutyDAO implements DAO<TaxiOnDutyData>{
 			System.out.println(output);
 			return output;
 		}catch(Exception e){
-			GlobalLogger.infolog.log(Level.WARNING, "Error Updating TaxiOnDutyData");
+			GlobalLogger.infolog.info( "Error Updating TaxiOnDutyData");
 			e.printStackTrace();
 		}
 		// TODO Auto-generated method stub
@@ -58,12 +58,12 @@ public class TaxiOnDutyDAO implements DAO<TaxiOnDutyData>{
 			while(output.next()){
 				
 				TaxiOnDutyData obtainedData = new TaxiOnDutyData(output.getString(1), output.getString(2), output.getString(3), output.getString(4), output.getString(5));
-				GlobalLogger.infolog.log(Level.INFO, "Database Obtained TaxiOnGoingData from " + obtainedData.toString());
+				GlobalLogger.infolog.info("Database Obtained TaxiOnGoingData from " + obtainedData.toString());
 				return obtainedData;
 			}
 
 		}catch(Exception e){
-			GlobalLogger.infolog.log(Level.WARNING, "Error Obtaining Available Drivers.");
+			GlobalLogger.infolog.info("Error Obtaining Available Drivers.");
 			e.printStackTrace();
 		}
 		// TODO Auto-generated method stub
@@ -78,13 +78,13 @@ public class TaxiOnDutyDAO implements DAO<TaxiOnDutyData>{
 			ResultSet output = prepareStatement.executeQuery();
 			while(output.next()){
 				TaxiOnDutyData obtainedData = new TaxiOnDutyData(output.getString(1), output.getString(2), output.getString(3), output.getString(3), output.getString(4));
-				GlobalLogger.infolog.log(Level.INFO, "Database Obtained TaxiOnGoingData from " + obtainedData.toString());
+				GlobalLogger.infolog.info( "Database Obtained TaxiOnGoingData from " + obtainedData.toString());
 				outputData.add(obtainedData);
 			}
 			
 			return outputData;
 		}catch(Exception e){
-			GlobalLogger.infolog.log(Level.WARNING, "Error Obtaining Available Drivers.");
+			GlobalLogger.infolog.info( "Error Obtaining Available Drivers.");
 			e.printStackTrace();
 		}
 		// TODO Auto-generated method stub
