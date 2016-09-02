@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- property  -->
+	<bean id="custBean1" class="com.training.domains.Patient" scope="prototype">
+		<property name="patientId"   value="101"/>
+		<property name="patientName" value="Ramesh" />
+		<property name="patientType" value="OutPatient" />
+	</bean>
+	<bean id="docBean1" class="com.training.domains.Doctor" p:doctorCode="10200" p:doctorName="Suresh" p:specialization="ENT" p:patient-ref="custBean1">
+	</bean>
+	
+	
+	<!-- the constructor args  -->
+	<bean id="patBean2" class="com.training.domains.Patient" c:patientId="102" c:patientName="Rajesh" c:patientType="InPatient"></bean>
+	<!-- the constructor args2  -->
+	<bean id="patBean3" class="com.training.domains.Patient">
+		<constructor-arg name="patientId"   value="102"/>
+		<constructor-arg name="patientName" value="Ramesh2" />
+		<constructor-arg name="patientType" value="OutPatient" />
+	</bean>
+	
+	<!-- properties shortcut -->
+	<bean id="docBean2" class="com.training.domains.Doctor" p:doctorCode="10200" p:doctorName="Suresh" p:specialization="ENT">
+		<property name="patientList">
+			<list value-type="com.training.domains.Patient">
+				<ref bean="custBean1"/>
+				  <ref bean="patBean2"/>
+				    <ref bean="patBean3"/>				
+			</list>
+		</property>
+	</bean>
+	<bean id="patient" class="com.training.domains.Patient">
+		<property name="patientId"   value="201"/>
+		<property name="patientName" value="Mayank" />
+		<property name="patientType" value="OutPatient" />
+	</bean>
+	
+	<!-- gets checks class if there is an existing object that matches a bean  -->
+	<bean id="docBean3" class="com.training.domains.Doctor" autowire="byName">
+		<property name="doctorCode" value="2020"/>
+		<property name="doctorName" value="amit" />
+		<property name="specialization" value="Eye"></property>
+	</bean>
+	
+	<bean id="docBean4" class="com.training.domains.Doctor" autowire="byName">
+		<property name="doctorCode" value="5000"/>
+		<property name="doctorName" value="Bob" />
+		<property name="specialization" value="Foot"></property>
+		<property name="patientList">
+			<list value-type="com.training.domains.Patient">
+				<ref bean="custBean1"/>
+				  <ref bean="patBean2"/>
+				    <ref bean="patBean3"/>				
+			</list>
+		</property>	
+		<property name="supportStaff">
+			<map value-type="java.lang.String" key-type="java.lang.String">
+				<entry key="coolbeans" value="shoot"></entry>
+				<entry key="coolbeans2" value="shoot2"></entry>
+				<entry key="coolbeans3" value="shoot3"></entry>
+			</map>
+		</property>
+	</bean>	
+</beans>
