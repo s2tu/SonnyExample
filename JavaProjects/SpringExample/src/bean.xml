@@ -65,4 +65,24 @@
 			</map>
 		</property>
 	</bean>	
+	
+	<bean id="addr1" class="com.training.domains.Address" c:country="Canada" c:street="Queen"></bean>
+	
+	
+	<bean id="cust1" class="com.training.domains.Customer" c:custId="1" c:customerName="Bob" c:addr-ref="addr1">
+	
+	</bean>
+	<bean id="item1" class="com.training.domains.Item" c:itemName="Potion" c:itemNumber="1" c:itemRate="200"></bean>
+	<bean id="item2" class="com.training.domains.Item" c:itemName="Potion2" c:itemNumber="2" c:itemRate="300"></bean>
+	<bean id="item3" class="com.training.domains.Item" c:itemName="Potion3" c:itemNumber="3" c:itemRate="400"></bean>
+	
+	<bean id="invoice1" p:amount="100" p:cust-ref="cust1" p:invoiceNumber="1" class="com.training.domains.Invoice" init-method="init" destroy-method="cleanUp">
+		<property name="itemList">
+			<list value-type="com.training.domains.Item">
+				<ref bean="item1"/>
+				  <ref bean="item2"/>
+				    <ref bean="item3"/>				
+			</list>
+		</property>			
+	</bean>
 </beans>

@@ -1,0 +1,13 @@
+Create a sPring Core Application using 
+xml based configuration
+the domains class is Invoice
+---->use setter/constructor/p namespace / cnamesapce
+- ref attribute and collection injection
+
+
+public class Invoice{
+	private long invoiceNumber;
+	private Customer cust;
+	private double amount;
+	private List<Item>itemList;
+}
