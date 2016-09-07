@@ -1,0 +1,31 @@
+Spring Problem Statement:
+
+A telecom Service company plans to create a Spring based MVC Application to Create and Track customer Service Requests (SR)
+
+The Customer will be able to submit his details along with the type of Service required, such as Technical, Payment Related, and Special Offers
+
+The Application should register his request and give an acknowledgement of details of request along with Person to whom the request has been assigned with
+the CustomerService agents will be able to view the List of Requests of a specific type
+Choice Technology: Spring IOC/JDBC/Annotation based MVC/Validation
+CSS and JavaScript
+
+
+1. create dynamic web project
+2. add hars with deployment assembly
+3. create entity class service request with 
+	-requestType
+	-requestID
+	-description
+	-customerID
+	
+	
+	Create a controller Class ServiceREquestcontroller
+		-with requestURI to return index page
+			request GET URI to return a form with command object to enter Request Details
+			request POST to accept the form with the Request Details
+			request Get request to return a List of Services Request matching to service Type
+			
+			
+			Create index.jsp
+			Create Add Request.jsp
+			Create ViewRequest.jsp

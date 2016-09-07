@@ -13,7 +13,7 @@
 	<bean id="dataSrc" class="org.springframework.jdbc.datasource.DriverManagerDataSource" p:driverClassName="oracle.jdbc.driver.OracleDriver" p:username="system" p:password="sapjuly16" p:url="jdbc:oracle:thin:@localhost:1521:XE"></bean>
 	 -->
 	 <!-- obtaining the properties file -->
-	<bean id="propertyConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" p:location="DbConnections.properties"></bean>
+	<bean id="propertyConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" p:location="classpath:DbConnections.properties"></bean>
 
 	<bean id="dataSrc" class="org.springframework.jdbc.datasource.DriverManagerDataSource" p:driverClassName="${db.driverClass}" p:username="${db.userName}" p:password="${db.password}" p:url="${db.driverURL}"></bean>
 	

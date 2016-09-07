@@ -1,0 +1,84 @@
+@CHARSET "ISO-8859-1";
+
+h1{
+	text-align:center;
+	color:blue;
+}
+
+/*
+html{
+	width:100%;
+	height:100%;
+}
+*/
+body {
+	/*
+	width:100%;
+	height:100%;*/
+	background-color: purple;
+}
+
+.headStyle1{
+	width:100%;
+	height:102px;
+	background-color:red;
+}
+
+#logo1{
+	max-width:100px;
+	max-height:100px;
+	border: 2px solid red;
+	float:right;
+}
+
+#caption{
+	float: left;
+	font-family:Arial;
+	font-size:5.4;
+}
+
+table{
+	border:2px solid blue;
+	width:75%;
+	margin-left: auto;
+	margin-right:auto;
+	border-collapse: collapse;
+	
+}
+
+tr,td,th{
+	text-align:left;
+	border:2px solid blue;
+}
+
+
+/*the alternate rows will be gray*/
+/* you can select odd/even/expression using n*/
+tr:nth-Child(2n+1){
+	background-color: gray;
+}
+
+/* test*/
+a{
+	border: 1px solid black;
+	color:black;
+	font-family:serif;
+	font-size: 1.3em;
+	margin:10px;
+	text-decoration: none;
+	border-radius:5px;
+}
+
+
+/*Child Selector */
+/* the > means only the elements under ul are applicable */
+ul>li{
+	display:inline;
+}
+
+
+/*this will make all input with type text to be bigger */
+
+input[type='text']{
+	height:50px;
+}
