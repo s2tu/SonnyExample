@@ -7,13 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1 style="text-align:center">Welcome to blah</h1>
-	
-	<a href="addFood">Add a Food heres</a>
-	<a href="addCustomer">Add a Customer heres</a>
-	<a href="find">Find a Customer heres</a>
-	<a href="addCustomer/showAll">show all Customer heres</a>
-	<a href="studentDetails">Get Student Details here</a>
-	<a href="login">Login here</a>	
+	<h1>Exception Handler</h1>
+	Cause:${cause}
+	<br>
+	Exception Class:${exceptionClass}
+	<br>
+	Request URI:${requestUri}
 </body>
 </html>

@@ -4,6 +4,7 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
@@ -14,6 +15,22 @@
 	<context:component-scan base-package="com.training"></context:component-scan>
 	<bean id="mdlView" class="org.springframework.web.servlet.ModelAndView"></bean>
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
-	<bean id="request" class="com.training.domains.Request"></bean>
+
+	 
+	<bean id="request1" class="com.training.domains.Request" c:customerID="1" c:description="This is a service request" c:requestID="1" c:requestType="Service1" />
+	<bean id="request2" class="com.training.domains.Request" c:customerID="2" c:description="This is a service request2" c:requestID="2" c:requestType="Service2" />
+	<bean id="request3" class="com.training.domains.Request" c:customerID="3" c:description="This is a service request3" c:requestID="3" c:requestType="Service3" />
+	<bean id="request4" class="com.training.domains.Request" c:customerID="4" c:description="This is a service request4" c:requestID="4" c:requestType="Service4" />
 	
-	</beans>
+	<bean id="requestDao" class="com.training.dao.RequestDao">
+		<property name="requestDatabase">
+			<map key-type="java.lang.Integer" value-type="com.training.domains.Request">
+				<entry key="1" value-ref="request1"></entry>
+				<entry key="2" value-ref="request2"></entry>
+				<entry key="3" value-ref="request3"></entry>
+				<entry key="4" value-ref="request4"></entry>
+			</map>
+		</property>
+	</bean>
+	
+</beans>

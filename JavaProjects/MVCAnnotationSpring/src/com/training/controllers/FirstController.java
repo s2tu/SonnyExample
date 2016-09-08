@@ -14,5 +14,13 @@ public class FirstController {
 	public String findPage(){
 		return "find";
 	}	
-	
+	@RequestMapping("studentDetails")
+	public String studentPage(){
+		return "GetStudentDetails";
+	}
+	/*
+	@RequestMapping("login")
+	public String loginPage(){
+		return "Login";
+	}*/	
 }

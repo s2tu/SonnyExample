@@ -1,5 +1,7 @@
 package com.training.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,30 +16,36 @@ import com.training.dao.RequestDao;
 import com.training.domains.Request;
 
 
-
-@Controller
+//serviceRequestController
+@Controller	
 @RequestMapping("/serviceRequest")
 public class ServiceRequestController {
 	
-	//private RequestDao requestDao;
 	
-
-	/*
+	@Autowired
+	private RequestDao requestDao;
+	
+	@RequestMapping(value="viewAllRequest", method=RequestMethod.GET)
+	public String findCustomer(Model model){
+		List<Request> listRequests = requestDao.getAll();
+		model.addAttribute("listRequests", listRequests);
+		return "ShowAllRequest";
+	}	
+	
 	@RequestMapping(value="viewRequest", method=RequestMethod.GET)
 	public String findCustomer(@RequestParam("key") int key, Model model){
-		
-		
-		//Customer foundCustomer = custdao.find(key);
-		//model.addAttribute("foundCustomer", foundCustomer);
 		Request request = requestDao.get(key);
-		model.addAttribute("foundRequest", request);
-		return "ViewRequest";
+		model.addAttribute("singleRequest", request);
+		return "ShowSingleRequest";
 	}
+	
+	
 	
 	//submit the form
 	@RequestMapping(value="/addRequest", method=RequestMethod.POST)
 	public String onSubmit(@ModelAttribute("command") Request request, Model mdl){
 		requestDao.add(request);
+		mdl.addAttribute("statusMsg", "Your request is added.");
 		return "AddRequest";
-	}*/	
+	}
 }

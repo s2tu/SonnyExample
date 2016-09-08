@@ -7,13 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1 style="text-align:center">Welcome to blah</h1>
+	${singleRequest}
 	
-	<a href="addFood">Add a Food heres</a>
-	<a href="addCustomer">Add a Customer heres</a>
-	<a href="find">Find a Customer heres</a>
-	<a href="addCustomer/showAll">show all Customer heres</a>
-	<a href="studentDetails">Get Student Details here</a>
-	<a href="login">Login here</a>	
+	<a href="/TelecomServiceLab2">Home</a>
 </body>
 </html>

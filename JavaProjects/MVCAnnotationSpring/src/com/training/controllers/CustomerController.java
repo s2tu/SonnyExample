@@ -16,6 +16,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
@@ -41,9 +42,15 @@ public class CustomerController{
 	
 
 	@RequestMapping(method=RequestMethod.POST)
-	public String onSubmit(@ModelAttribute("customerAdded") Customer customer, Model mdl){
-		int rowAdded = custdao.add(customer);
-		mdl.addAttribute("rowAdded", rowAdded);
+	public String onSubmit(@ModelAttribute("customerAdded") Customer customer, Model mdl) throws DuplicateKeyException{
+		
+		try{
+			int rowAdded = custdao.add(customer);
+			mdl.addAttribute("rowAdded", rowAdded);
+		}catch(DuplicateKeyException e){
+			throw e;
+		}
+		
 		return "customerAddedSuccess";
 	}	
 	

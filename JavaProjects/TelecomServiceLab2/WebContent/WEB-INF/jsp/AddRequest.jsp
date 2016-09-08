@@ -9,20 +9,33 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <body>
-	<form:form action="#" method="post">
-		<label>Request ID</label>
+
+	<h1 style="color:green">${statusMsg}</h1>
+	<form:form action="serviceRequest/addRequest" method="POST">
+		<label>Request ID:</label>
 		<br>
 		<form:input  path="requestID"/>
 		<br>
-		<label>Description</label>
+		<label>Description:</label>
 		<br>
 		<form:input path="description"/>
 		<br>
-		<label>customer ID</label>
+		<label>Request Type:</label>
+		<br>
+		<form:select  path="requestType">
+			<option value="techinical">Technical</option>
+			<option value="payment_related">Payment Related</option>
+			<option value="special_offers">Special Offers</option>
+			
+		</form:select>
+		<br>
+		<label>Customer ID:</label>
 		<br>
 		<form:input  path="customerID"/>
 		<br>
 		<button>Add Request</button>
 	</form:form>
+	
+	<a href="/TelecomServiceLab2">Home</a>
 </body>
 </html>

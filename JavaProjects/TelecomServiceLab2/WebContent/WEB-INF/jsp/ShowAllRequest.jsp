@@ -5,15 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 </head>
 <body>
-	<h1 style="text-align:center">Welcome to blah</h1>
+	<c:forEach items="${listRequests}" var="req">
+		${req}
+		<br>
+	</c:forEach>
 	
-	<a href="addFood">Add a Food heres</a>
-	<a href="addCustomer">Add a Customer heres</a>
-	<a href="find">Find a Customer heres</a>
-	<a href="addCustomer/showAll">show all Customer heres</a>
-	<a href="studentDetails">Get Student Details here</a>
-	<a href="login">Login here</a>	
+	<a href="/TelecomServiceLab2">Home</a>
 </body>
 </html>

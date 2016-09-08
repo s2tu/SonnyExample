@@ -1,23 +1,35 @@
 package com.training.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.training.domains.Request;
 import com.training.interfaces.DaoInterface;
 
 public class RequestDao implements DaoInterface<Request>{
 	
-	HashMap<Integer, Request> requestDatabase;
 	
-	public void init(){
-		requestDatabase.put(1, new Request("New Service", 1, "This is new service", 1));
-		requestDatabase.put(2, new Request("New Service1", 2, "This is new service", 2));
-		requestDatabase.put(3, new Request("New Service2", 3, "This is new service", 3));
-		requestDatabase.put(4, new Request("New Service3", 4, "This is new service", 4));
-		requestDatabase.put(5, new Request("New Service4", 5, "This is new service", 5));
-		
-		
+	private HashMap<Integer, Request> requestDatabase;
+	
+
+	/**
+	 * @return the requestDatabase
+	 */
+	public HashMap<Integer, Request> getRequestDatabase() {
+		return requestDatabase;
 	}
+
+	/**
+	 * @param requestDatabase the requestDatabase to set
+	 */
+	public void setRequestDatabase(HashMap<Integer, Request> requestDatabase) {
+		this.requestDatabase = requestDatabase;
+	}
+
 	public RequestDao(){
 		super();
 		requestDatabase = new HashMap<Integer, Request>();
@@ -32,6 +44,15 @@ public class RequestDao implements DaoInterface<Request>{
 	public Request get(int id) {
 		// TODO Auto-generated method stub
 		return requestDatabase.get(id);
+	}
+	
+	public List<Request> getAll(){
+		
+		List<Request> requestList = new ArrayList<Request>();
+		for(Entry<Integer, Request> req:requestDatabase.entrySet()){
+			requestList.add(req.getValue());
+		}
+		return requestList;
 	}
 
 }

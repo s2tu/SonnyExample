@@ -76,6 +76,6 @@ public class Request {
 
 	public String toString(){
 		
-		return "Request ID:" + this.requestID  + "Request Type:"  + this.requestType  + "Description:" + this.description + "Customer ID:" + this.customerID; 
+		return "Request ID:" + this.requestID  + " Request Type:"  + this.requestType  + " Description:" + this.description + " Customer ID:" + this.customerID; 
 	}
 }
