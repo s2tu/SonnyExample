@@ -14,8 +14,8 @@
 				$.ajax({
 					type:"GET",
 					dataType:"json",
-					url:"http://jsonplaceholder.typicode.com/users/" + escape(userCode),
-		
+					//url:"http://jsonplaceholder.typicode.com/users/" + escape(userCode),
+					url:"http://localhost:7070/getReports",
 					error:function(xhr, textStatus, errorThrown){
 						alert("Error");
 					},
