@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 12, 2016 12:11:58 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.training.entity.Car" table="CAR">
+        <id name="registerNumber" type="java.lang.String">
+            <column name="REGISTERNUMBER" />
+            <generator class="assigned" />
+        </id>
+        <property name="ownerName" type="java.lang.String">
+            <column name="OWNERNAME" />
+        </property>
+        <component name="officeAddr" class="com.training.domains.Address">
+        	<property name="street" column="OFFICE_STREET"></property>
+        	<property name="city" column="OFFICE_CITY"></property>
+        	<property name="pinCode" column="OFFICE_PINCODE"></property>
+        </component>
+        <component name="resiAddr" class="com.training.domains.Address">
+        	<property name="street" column="RESIDENCE_STREET"></property>
+        	<property name="city" column="RESIDENCE_CITY"></property>
+        	<property name="pinCode" column="RESIDENCE_PINCODE"></property>
+        </component>        
+    </class>
+</hibernate-mapping>
