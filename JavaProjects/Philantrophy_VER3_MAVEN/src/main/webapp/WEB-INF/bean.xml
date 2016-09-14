@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<context:annotation-config></context:annotation-config>
+	
+	<context:component-scan base-package="com.training"></context:component-scan>
+
+	<bean id="donor1" class="com.training.entities.Donor" p:donorName="dude1" p:email="dude1@hotmail.com" p:handPhone="911">
+		<property name="address"><bean id="address1" class="com.training.entities.Address" c:addressLine1="1113 nat street" 
+		c:addressLine2="2222 dumi street" c:cityName="virtual island" c:pinCode="1337"></bean></property>
+	</bean>
+	<bean id="donor2" class="com.training.entities.Donor" p:donorName="dude2" p:email="dude2@hotmail.com" p:handPhone="9112">
+		<property name="address"><bean id="address2" class="com.training.entities.Address" c:addressLine1="1113 nat street" 
+		c:addressLine2="2222 dumi street" c:cityName="virtual island" c:pinCode="1337"></bean></property>
+	</bean>
+	<bean id="donor3" class="com.training.entities.Donor" p:donorName="dude3" p:email="dude3@hotmail.com" p:handPhone="9113">
+		<property name="address"><bean id="address3" class="com.training.entities.Address" 
+		c:addressLine1="1113 nat street" c:addressLine2="2222 dumi street" c:cityName="virtual island" c:pinCode="1337"></bean></property>
+	</bean>		
+	<bean id="donation1" class="com.training.entities.Donation"  c:donationId="1"  c:donorName="dude1" c:amount="100" ></bean>	
+	<bean id="donation2" class="com.training.entities.Donation"  c:donationId="2"  c:donorName="dude2" c:amount="100" ></bean>		
+	<bean id="donation3" class="com.training.entities.Donation"  c:donationId="3"  c:donorName="dude3" c:amount="100" ></bean>		
+			
+	<bean id="project1" class="com.training.entities.Project" p:projectId="1" p:projectName="NewProject" p:amountCollected="0">
+		<property name="donationList">
+			<set>
+				<ref bean="donation1"></ref>
+				<ref bean="donation2"></ref>
+				<ref bean="donation3"></ref>
+			</set>
+		</property>
+	
+	</bean>
+	
+	
+	<bean id="dataSrc" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		p:username="system"
+		p:password="sapjuly16"	
+		p:url="jdbc:oracle:thin:@localhost:1521:XE"
+		p:driverClassName="oracle.jdbc.driver.OracleDriver">
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean" p:dataSource-ref="dataSrc">
+		<property name="mappingResources">
+			<list>
+				  <value>Donation.hbm.xml</value>
+				  <value>Donor.hbm.xml</value>
+				  <value>Project.hbm.xml</value>
+			</list>
+		
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate" p:sessionFactory-ref="sessionFactory"></bean>
+	<bean id="projectDAO" class="com.training.daos.ProjectDAO"></bean>
+	<bean id="donorDAO" class="com.training.daos.DonorDAO"></bean>
+	<bean id="donationDAO" class="com.training.daos.DonationDAO"></bean>
+</beans>
