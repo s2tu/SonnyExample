@@ -19,7 +19,6 @@
 			$.ajax({
 				type:"GET",
 				dataType:"json",
-				//url:"http://jsonplaceholder.typicode.com/users/" + escape(userCode),
 				url:"/Philantrophy_VER3_MAVEN/ViewDonor/${projectID}" ,
 				error:function(xhr, textStatus, errorThrown){
 					console.log(errorThrown);

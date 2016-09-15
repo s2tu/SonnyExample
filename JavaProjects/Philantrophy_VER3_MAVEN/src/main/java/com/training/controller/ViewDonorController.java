@@ -24,8 +24,7 @@ import com.training.entities.Donor;
 
 @RestController
 public class ViewDonorController {
-	@Autowired
-	private ModelAndView mdlView;
+
 	
 	@Autowired
 	private DonorDAO donorDAO;

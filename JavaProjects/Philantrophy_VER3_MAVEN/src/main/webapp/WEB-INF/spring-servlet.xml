@@ -9,9 +9,14 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	
 	<context:annotation-config/>
-
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	
 	<bean id="mdlView" class="org.springframework.web.servlet.ModelAndView"></bean>
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
 	<!--   bean name ="/" class="com.training.controller.MainController"></bean> -->
+	
 	<import resource="bean.xml" />
+	
 </beans>
