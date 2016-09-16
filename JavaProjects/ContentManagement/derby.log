@@ -1,0 +1,18 @@
+----------------------------------------------------------------
+2016-09-16 06:22:44.666 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance a816c00e-0157-31a9-594a-000007129f98
+on database directory D:\Sonny_GitExamples\JavaProjects\ContentManagement\repository\version\db  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2016-09-16 06:22:45.358 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance 888c4022-0157-31a9-594a-000007129f98
+on database directory D:\Sonny_GitExamples\JavaProjects\ContentManagement\repository\workspaces\default\db  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2016-09-16 06:22:46.396 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance 6965c036-0157-31a9-594a-000007129f98
+on database directory D:\Sonny_GitExamples\JavaProjects\ContentManagement\repository\workspaces\security\db  
+
+Database Class Loader started - derby.database.classpath=''
